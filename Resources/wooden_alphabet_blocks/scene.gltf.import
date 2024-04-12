@@ -1,0 +1,297 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://br3nsxt3tbdk6"
+path="res://.godot/imported/scene.gltf-5896b76935966e6353763bac6ccc7802.scn"
+
+[deps]
+
+source_file="res://Resources/wooden_alphabet_blocks/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-5896b76935966e6353763bac6ccc7802.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"meshes": {
+"Sketchfab_Scene_A_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_A_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_B_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_B_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_C_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_C_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_D_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_D_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_E_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_E_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_F_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_F_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_G_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_G_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_H_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_H_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_I_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_I_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_J_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_J_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_K_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_K_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_L_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_L_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_M_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_M_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_N_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_N_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_O_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_O_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_P_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_P_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_Q_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_Q_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_R_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_R_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_S_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_S_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_T_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_T_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_U_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_U_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_V_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_V_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_W_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_W_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_X_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_X_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_Y_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_Y_low_DCletterblocks_0.res"
+},
+"Sketchfab_Scene_Z_low_DCletterblocks_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/wooden_alphabet_blocks/meshes/Sketchfab_Scene_Z_low_DCletterblocks_0.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

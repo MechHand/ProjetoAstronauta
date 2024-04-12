@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bigfuk6u6n4ck"]
+
+[sub_resource type="GDScript" id="GDScript_a3wly"]
+script/source = "class_name ChangeSceneButton
+extends Button
+
+## Class that already have a configuration to change scenes.
+
+@export_category(\"Scene Configuration\")
+## The scene that the game is suposed to change.
+@export var scene_to_change : String
+
+
+## Connects the pressed signal to call the SceneManager autoload.
+func _ready() -> void:
+	pressed.connect(_change_scene)
+
+
+## When pressed, change to the scene stored in [param scene_to_change].
+func _change_scene() -> void:
+	SceneManager._change_scene_to(scene_to_change)
+"
+
+[node name="ChangeSceneButton" type="Button"]
+text = "Iniciar"
+script = SubResource("GDScript_a3wly")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

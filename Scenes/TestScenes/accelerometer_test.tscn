@@ -1,0 +1,156 @@
+[gd_scene load_steps=8 format=3 uid="uid://bo0187edpxcr0"]
+
+[ext_resource type="Script" path="res://Scenes/TestScenes/accelerometer_test.gd" id="1_ntl2u"]
+[ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="2_u7xml"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_i3mag"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mqw7e"]
+size = Vector3(1, 0.2, 0.75)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_58k1i"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_6op5j"]
+sky_material = SubResource("ProceduralSkyMaterial_58k1i")
+
+[sub_resource type="Environment" id="Environment_f0uae"]
+background_mode = 2
+sky = SubResource("Sky_6op5j")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="AccelerometerTest" type="CanvasLayer"]
+script = ExtResource("1_ntl2u")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChangeSceneButton" parent="Control" instance=ExtResource("2_u7xml")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -355.5
+offset_right = 158.0
+offset_bottom = -324.5
+grow_vertical = 2
+text = "Voltar para o menu"
+scene_to_change = "MainMenu"
+
+[node name="AccelerometerText" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -168.0
+offset_right = 113.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+text = "Accelerometer value : (0, 0, 0)
+Is tilting = True"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -60.0
+offset_bottom = 61.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="InvertXbtn" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Invert X"
+
+[node name="InvertYbtn" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Invert Y"
+
+[node name="InvertZbtn" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Invert Z"
+
+[node name="MultiplierSlider" type="HSlider" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 1.0
+max_value = 10.0
+step = 0.1
+value = 1.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/MultiplierSlider"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 11.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Multiplier"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -512.0
+offset_right = 256.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("ViewportTexture_i3mag")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+unique_name_in_owner = true
+
+[node name="ExempleMesh" type="MeshInstance3D" parent="SubViewport/Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = SubResource("BoxMesh_mqw7e")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport"]
+environment = SubResource("Environment_f0uae")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[connection signal="toggled" from="Control/VBoxContainer/InvertXbtn" to="." method="_on_invert_xbtn_toggled"]
+[connection signal="toggled" from="Control/VBoxContainer/InvertYbtn" to="." method="_on_invert_ybtn_toggled"]
+[connection signal="toggled" from="Control/VBoxContainer/InvertZbtn" to="." method="_on_invert_zbtn_toggled"]
+[connection signal="drag_ended" from="Control/VBoxContainer/MultiplierSlider" to="." method="_on_multiplier_slider_drag_ended"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8i3u6c3teomi"]
+
+[ext_resource type="PackedScene" uid="uid://c66lldqedf65l" path="res://Nodes/AbacabaNode/abacaba_node.tscn" id="1_3jbyo"]
+[ext_resource type="Script" path="res://Scenes/AbacabaLevel/abacaba_level.gd" id="1_aqspj"]
+[ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="3_84hty"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hkmo4"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_d2fof"]
+sky_material = SubResource("ProceduralSkyMaterial_hkmo4")
+
+[sub_resource type="Environment" id="Environment_xhfnu"]
+background_mode = 2
+sky = SubResource("Sky_d2fof")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="abacaba_level" type="Node3D" node_paths=PackedStringArray("abacaba_nodes")]
+script = ExtResource("1_aqspj")
+abacaba_nodes = [NodePath("AbacabaNode"), NodePath("AbacabaNode2"), NodePath("AbacabaNode3")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xhfnu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GameCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="AbacabaNode" parent="." instance=ExtResource("1_3jbyo")]
+correct_letter = "CA"
+
+[node name="AbacabaNode2" parent="." instance=ExtResource("1_3jbyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+correct_letter = "GA"
+creature = "Gato"
+
+[node name="AbacabaNode3" parent="." instance=ExtResource("1_3jbyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+correct_letter = "PA"
+creature = "Pato"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ChangeSceneButton" parent="CanvasLayer/Control" instance=ExtResource("3_84hty")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 158.0
+offset_bottom = 15.5
+grow_vertical = 2
+text = "Voltar para o menu"
+scene_to_change = "MainMenu"
+
+[node name="WinText" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+pixel_size = 0.05
+text = "Venceu!"
