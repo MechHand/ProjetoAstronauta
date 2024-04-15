@@ -1,13 +1,15 @@
-class_name NumberPlanet extends RigidBody3D
+class_name ColorBall extends RigidBody3D
 
 signal stopped_being_dragged
 signal started_being_dragged
 
+@export_category("Ball Parameters")
+@export_enum("Red", "Green", "Blue") var color_ball : String = "Red"
+@export var mesh_color : Color
 @export_category("Visual Parameters")
 @export var min_hold_size : float = 0.5
 @export var max_hold_size : float = 1.0
 @onready var icosphere: MeshInstance3D = $Icosphere
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var can_be_dragged : bool = true
 var is_on_sleep_area : bool = true
@@ -22,21 +24,22 @@ var original_pos : Vector3
 
 func _ready() -> void:
 	original_pos = global_position
-	animation_player.speed_scale = randf_range(0.05, 0.25)
+	
+	icosphere.mesh.material.albedo_color = mesh_color
 
 
 func _physics_process(delta: float) -> void:
-	global_position.z = 0.0
-	
 	if is_being_dragged == true:
-		global_position = lerp(global_position, Vector3(pos_x, pos_y, 0.0), 0.80)
+		global_position = Vector3(pos_x, pos_y, lerpf(global_position.z, 6.0, 1.0))
 		icosphere.scale = lerp(icosphere.scale, Vector3(max_hold_size, max_hold_size, max_hold_size), 0.13)
 	else:
+		
 		icosphere.scale = lerp(icosphere.scale, Vector3(min_hold_size, min_hold_size, min_hold_size), 0.13)
 	
 	if is_on_sleep_area == true or is_being_dragged == true:
 		if is_stored == false:
 			freeze = true
+			global_position.z = lerpf(global_position.z, 0.0, 0.5)
 	else:
 		freeze = false
 

@@ -242,6 +242,11 @@ layout_mode = 2
 text = "Ir para jogo números"
 scene_to_change = "Numeros"
 
+[node name="ChangeSceneButton5" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
+layout_mode = 2
+text = "Ir para jogo cores"
+scene_to_change = "Cores"
+
 [node name="ChangeSceneButton3" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
 layout_mode = 2
 text = "Ir para teste de acelerometro"

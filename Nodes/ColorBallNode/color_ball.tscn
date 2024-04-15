@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://du71lcta03tbp"]
+
+[ext_resource type="Script" path="res://Nodes/ColorBallNode/color_ball.gd" id="1_ell02"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7qt81"]
+friction = 0.5
+bounce = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btvlo"]
+resource_local_to_scene = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_671pa"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_btvlo")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1q05i"]
+radius = 0.9
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_iuwmt"]
+radius = 0.6
+
+[node name="ColorBall" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_7qt81")
+script = ExtResource("1_ell02")
+mesh_color = Color(1, 0.337255, 0.270588, 1)
+
+[node name="Icosphere" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_671pa")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_1q05i")
+
+[node name="RigidyShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_iuwmt")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

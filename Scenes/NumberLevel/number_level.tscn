@@ -45,13 +45,13 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_qs6g3"]
 size = Vector3(20, 2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtray"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uk7u"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.392157, 1, 1, 0.00392157)
 
 [sub_resource type="BoxMesh" id="BoxMesh_l25bl"]
-material = SubResource("StandardMaterial3D_vtray")
+material = SubResource("StandardMaterial3D_0uk7u")
 size = Vector3(20, 2, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_d0tqr"]

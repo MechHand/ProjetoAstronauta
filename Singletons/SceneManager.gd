@@ -10,7 +10,8 @@ extends Node
 	"TestScene1" : "res://Scenes/TestScenes/test_scene_1.tscn",
 	"Abacaba" : "res://Scenes/AbacabaLevel/abacaba_level.tscn",
 	"Acelerometro" : "res://Scenes/TestScenes/accelerometer_test.tscn",
-	"Numeros" : "res://Scenes/NumberLevel/number_level.tscn"
+	"Numeros" : "res://Scenes/NumberLevel/number_level.tscn",
+	"Cores" : "res://Scenes/CoresLevel/cores_level.tscn"
 }
 
 
