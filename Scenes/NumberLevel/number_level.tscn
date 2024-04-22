@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://drfg4df25ca2s"]
+[gd_scene load_steps=17 format=3 uid="uid://drfg4df25ca2s"]
 
 [ext_resource type="PackedScene" uid="uid://nrn6j5ux1nx4" path="res://Nodes/NumberPlanetNode/number_planet.tscn" id="1_kgjds"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/number_level.gd" id="1_stip1"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="2_hvj3k"]
 [ext_resource type="PackedScene" uid="uid://brtjpxthaddjq" path="res://Nodes/DepositAreaNode/deposit_area.tscn" id="3_ircfk"]
+[ext_resource type="Script" path="res://Scenes/NumberLevel/WinText.gd" id="3_pinu4"]
+[ext_resource type="PackedScene" uid="uid://cd3ilt6nnp08i" path="res://Nodes/MathQuestionNode/math_question_node.tscn" id="5_6k77e"]
 
 [sub_resource type="Gradient" id="Gradient_26ybj"]
 offsets = PackedFloat32Array(0.915094, 1)
@@ -13,7 +15,7 @@ noise_type = 0
 frequency = 0.2
 fractal_type = 0
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ceybf"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lsay6"]
 in_3d_space = true
 seamless = true
 seamless_blend_skirt = 1.0
@@ -21,37 +23,38 @@ color_ramp = SubResource("Gradient_26ybj")
 noise = SubResource("FastNoiseLite_jabdd")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpk3j"]
-sky_top_color = Color(0.0823529, 0, 0.537255, 1)
+sky_top_color = Color(0.0475769, 1.20327e-07, 0.387303, 1)
 sky_horizon_color = Color(0.0823529, 0, 0.537255, 1)
-sky_cover = SubResource("NoiseTexture2D_ceybf")
+sky_cover = SubResource("NoiseTexture2D_lsay6")
 sky_cover_modulate = Color(0, 0.309804, 0.309804, 1)
 ground_bottom_color = Color(0.0823529, 0, 0.537255, 1)
 ground_horizon_color = Color(0.0823529, 0, 0.537255, 1)
 sun_angle_max = 0.0
 use_debanding = false
 
-[sub_resource type="Sky" id="Sky_c4o82"]
+[sub_resource type="Sky" id="Sky_rs7y5"]
 sky_material = SubResource("ProceduralSkyMaterial_tpk3j")
-process_mode = 2
 
 [sub_resource type="Environment" id="Environment_cvbnf"]
 background_mode = 2
-background_color = Color(0, 0, 0.286275, 1)
-sky = SubResource("Sky_c4o82")
+background_color = Color(0, 0.0110169, 0.176242, 1)
+sky = SubResource("Sky_rs7y5")
 sky_rotation = Vector3(-1.5708, 0, 0)
+ambient_light_source = 2
+ambient_light_color = Color(0.0743566, 0.198829, 0.45941, 1)
 tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qs6g3"]
 size = Vector3(20, 2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uk7u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtray"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.392157, 1, 1, 0.00392157)
 
 [sub_resource type="BoxMesh" id="BoxMesh_l25bl"]
-material = SubResource("StandardMaterial3D_0uk7u")
+material = SubResource("StandardMaterial3D_vtray")
 size = Vector3(20, 2, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_d0tqr"]
@@ -63,9 +66,10 @@ script = ExtResource("1_stip1")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
 
 [node name="ChangeSceneButton" parent="CanvasLayer/Control" instance=ExtResource("2_hvj3k")]
 layout_mode = 1
@@ -79,25 +83,51 @@ grow_vertical = 2
 text = "Voltar para o menu"
 scene_to_change = "MainMenu"
 
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -248.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 128.0
+grow_horizontal = 0
+text = "Coloque os planetas na caixinha de acordo a operação matemática."
+horizontal_alignment = 2
+autowrap_mode = 3
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cvbnf")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(0.965927, -0.224141, 0.129407, 2.24697e-08, 0.499998, 0.866027, -0.258816, -0.836518, 0.482961, 0, 0, 0)
 shadow_enabled = true
+shadow_opacity = 0.6
+
+[node name="WinText" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+pixel_size = 0.025
+text = "Acertou!"
+font_size = 64
+script = ExtResource("3_pinu4")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-projection = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 size = 10.0
+
+[node name="MathQuestionNode" parent="." instance=ExtResource("5_6k77e")]
+transform = Transform3D(0.113146, 0, 0.0640151, 0, 0.13, 0, -0.0640151, 0, 0.113146, -4.935, 0.505, 0.645)
 
 [node name="MathQuestionLabel" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+visible = false
 pixel_size = 0.025
 text = "2 + 4 = ?"
 
 [node name="DraggingArea" type="Area3D" parent="." groups=["SleepArea"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DraggingArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -108,43 +138,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_l25bl")
 
 [node name="NumberPlanet" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7, -3.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7, -4.9, 0)
 
 [node name="NumberPlanet2" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1, -3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1, -4, 0)
 
 [node name="NumberPlanet3" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -3.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -4.9, 0)
 
 [node name="NumberPlanet4" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, -3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, -4, 0)
 
 [node name="NumberPlanet5" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -3.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -4.9, 0)
 
 [node name="NumberPlanet6" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -4, 0)
 
 [node name="NumberPlanet7" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -3.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -4.9, 0)
 
 [node name="NumberPlanet8" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, -3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, -4, 0)
 
 [node name="NumberPlanet9" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -3.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -4.9, 0)
 
 [node name="NumberPlanet10" parent="." instance=ExtResource("1_kgjds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1, -2.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1, -3.9, 0)
 
 [node name="GroundsLimit" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GroundsLimit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 0)
 shape = SubResource("WorldBoundaryShape3D_d0tqr")
 
 [node name="DepositArea1" parent="." instance=ExtResource("3_ircfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1, 1)
 
-[node name="DepositArea2" parent="." instance=ExtResource("3_ircfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 1)
+[connection signal="won_game" from="." to="WinText" method="_on_number_level_won_game"]

@@ -19,6 +19,8 @@ var pos_y : float
 
 var original_pos : Vector3
 
+@onready var area_3d: Area3D = $Area3D
+
 
 func _ready() -> void:
 	original_pos = global_position
@@ -29,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	global_position.z = 0.0
 	
 	if is_being_dragged == true:
-		global_position = lerp(global_position, Vector3(pos_x, pos_y, 0.0), 0.80)
+		global_position = lerp(global_position, Vector3(pos_x, pos_y, 0.0), 0.96)
 		icosphere.scale = lerp(icosphere.scale, Vector3(max_hold_size, max_hold_size, max_hold_size), 0.13)
 	else:
 		icosphere.scale = lerp(icosphere.scale, Vector3(min_hold_size, min_hold_size, min_hold_size), 0.13)
@@ -46,9 +48,11 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, position: Vector3,
 		if can_be_dragged == true and event.pressed == true:
 			is_being_dragged = true
 			started_being_dragged.emit()
+			area_3d.scale = Vector3(2.0,2.0,2.0)
 		if can_be_dragged == true and event.pressed == false:
 			is_being_dragged = false
 			stopped_being_dragged.emit()
+			area_3d.scale = Vector3(1.0,1.0,1.0)
 	
 	if event is InputEvent:
 		pos_x = position.x

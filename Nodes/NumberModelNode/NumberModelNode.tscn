@@ -1,0 +1,58 @@
+[gd_scene load_steps=12 format=3 uid="uid://bbudbyfm3xbuu"]
+
+[ext_resource type="ArrayMesh" uid="uid://dnd21v0jlhe0t" path="res://Resources/numbers/Sketchfab_Scene_Object_0.res" id="1_jstut"]
+[ext_resource type="Script" path="res://Nodes/NumberModelNode/NumberModelNode.gd" id="1_u61ot"]
+[ext_resource type="ArrayMesh" uid="uid://bfih4jgjvag63" path="res://Resources/numbers/Sketchfab_Scene_Object_1.res" id="2_ufv8l"]
+[ext_resource type="ArrayMesh" uid="uid://cdvv4cd1wamb" path="res://Resources/numbers/Sketchfab_Scene_Object_9.res" id="3_ryfmu"]
+[ext_resource type="ArrayMesh" uid="uid://b1y5y6kgw0vpd" path="res://Resources/numbers/Sketchfab_Scene_Object_5.res" id="4_4ooda"]
+[ext_resource type="ArrayMesh" uid="uid://ebslu73mciq3" path="res://Resources/numbers/Sketchfab_Scene_Object_6.res" id="5_b436m"]
+[ext_resource type="ArrayMesh" uid="uid://dcdi6mx8k0iod" path="res://Resources/numbers/Sketchfab_Scene_Object_8.res" id="6_ekqnq"]
+[ext_resource type="ArrayMesh" uid="uid://cont817prlnre" path="res://Resources/numbers/Sketchfab_Scene_Object_7.res" id="7_c3g0a"]
+[ext_resource type="ArrayMesh" uid="uid://dn085fgd1xqvi" path="res://Resources/numbers/Sketchfab_Scene_Object_4.res" id="8_b6s6s"]
+[ext_resource type="ArrayMesh" uid="uid://b60kn07iq68ht" path="res://Resources/numbers/Sketchfab_Scene_Object_3.res" id="9_icweb"]
+[ext_resource type="ArrayMesh" uid="uid://bqmf3ml57n6ng" path="res://Resources/numbers/Sketchfab_Scene_Object_2.res" id="11_qc2yf"]
+
+[node name="NumberModelNode" type="Node3D" node_paths=PackedStringArray("number_array")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_u61ot")
+number_array = [NodePath("Number0"), NodePath("Number1"), NodePath("Number2"), NodePath("Number3"), NodePath("Number4"), NodePath("Number5"), NodePath("Number6"), NodePath("Number7"), NodePath("Number8"), NodePath("Number9")]
+
+[node name="Number9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.5, 2, 15)
+mesh = ExtResource("1_jstut")
+
+[node name="Number8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.5, 2, 15)
+mesh = ExtResource("2_ufv8l")
+
+[node name="Number7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5, 2, 15)
+mesh = ExtResource("3_ryfmu")
+
+[node name="Number6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 2, 15)
+mesh = ExtResource("4_4ooda")
+
+[node name="Number5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 2, 15)
+mesh = ExtResource("5_b436m")
+
+[node name="Number4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 2, 15)
+mesh = ExtResource("6_ekqnq")
+
+[node name="Number3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 2, 15)
+mesh = ExtResource("7_c3g0a")
+
+[node name="Number2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.5, 2, 15)
+mesh = ExtResource("8_b6s6s")
+
+[node name="Number1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5, 2, 15)
+mesh = ExtResource("9_icweb")
+
+[node name="Number0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109, 2, 15)
+mesh = ExtResource("11_qc2yf")

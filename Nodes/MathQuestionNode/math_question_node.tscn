@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd3ilt6nnp08i"]
+
+[ext_resource type="Script" path="res://Nodes/MathQuestionNode/math_question_node.gd" id="1_8bamn"]
+[ext_resource type="PackedScene" uid="uid://bbudbyfm3xbuu" path="res://Nodes/NumberModelNode/NumberModelNode.tscn" id="2_s73tc"]
+
+[node name="MathQuestionNode" type="Node3D" node_paths=PackedStringArray("first_model", "second_model", "operation_digit")]
+script = ExtResource("1_8bamn")
+first_model = NodePath("NumberModelNode")
+second_model = NodePath("NumberModelNode2")
+operation_digit = NodePath("OperationModel")
+
+[node name="NumberModelNode" parent="." instance=ExtResource("2_s73tc")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12, 0, 0)
+
+[node name="NumberModelNode2" parent="." instance=ExtResource("2_s73tc")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12, 0, 0)
+
+[node name="OperationModel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+pixel_size = 0.3
+alpha_antialiasing_edge = 1.0
+texture_filter = 5
+modulate = Color(1, 0.760784, 0.556863, 1)
+text = "+"
+outline_size = 8
+
+[node name="Result" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 5, 0)
+pixel_size = 0.3
+alpha_antialiasing_edge = 1.0
+texture_filter = 5
+modulate = Color(1, 0.760784, 0.556863, 1)
+text = "="
+outline_size = 8

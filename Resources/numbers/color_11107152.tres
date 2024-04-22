@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ds7cejj2f8ay8"]
+
+[resource]
+resource_name = "color_11107152"
+cull_mode = 2
+albedo_color = Color(0.833819, 0.723612, 0.595851, 1)
