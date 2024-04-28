@@ -1,5 +1,10 @@
 extends CanvasLayer
 
+const MAX_Y : float = 288.0
+const MAX_X : float = 288.0
+const GRAVITY : float = 9.8
+
+
 @onready var accelerometer_text = %AccelerometerText
 @onready var invert_xbtn = %InvertXbtn
 @onready var invert_ybtn = %InvertYbtn
@@ -19,6 +24,9 @@ func _process(delta):
 	var event = Input
 	if event:
 		var accelerometer := event.get_accelerometer()
+		
+		accelerometer.y /= GRAVITY * MAX_Y
+		accelerometer.x /= GRAVITY * MAX_X
 		
 		if invert_x == true:
 			accelerometer.x *= -1 * multiplier
