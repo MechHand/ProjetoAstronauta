@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cm5p5p8d05okq"
-path="res://.godot/imported/BoxBottom.glb-8cb639a1c61cc48a3401659e599a1a92.scn"
+uid="uid://cwhaxqtyec1vl"
+path="res://.godot/imported/MenuButton.glb-b661c191f1d00067ce36c56143885861.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/BoxBottom.glb"
-dest_files=["res://.godot/imported/BoxBottom.glb-8cb639a1c61cc48a3401659e599a1a92.scn"]
+source_file="res://Resources/InterfaceModels/MenuButton.glb"
+dest_files=["res://.godot/imported/MenuButton.glb-b661c191f1d00067ce36c56143885861.scn"]
 
 [params]
 

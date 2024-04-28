@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bmrqcgahasfwa"
-path="res://.godot/imported/BoxCover.glb-239e8790fcb2121e96b2f5861658e392.scn"
+path="res://.godot/imported/BoxCover.glb-373bceff23b74462da60e08a5f840a97.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/BoxCover.glb"
-dest_files=["res://.godot/imported/BoxCover.glb-239e8790fcb2121e96b2f5861658e392.scn"]
+source_file="res://Resources/AbacabaLevel_Assets/Boxes/BoxCover.glb"
+dest_files=["res://.godot/imported/BoxCover.glb-373bceff23b74462da60e08a5f840a97.scn"]
 
 [params]
 
