@@ -6,4 +6,12 @@ func _ready() -> void:
 
 
 func _on_number_level_won_game() -> void:
+	text = "Acertou!"
 	visible = true
+
+
+func _on_number_level_try_again():
+	text = "Tente Novamente!"
+	visible = true
+	await get_tree().create_timer(3).timeout
+	visible = false

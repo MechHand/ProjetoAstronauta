@@ -1,6 +1,7 @@
 class_name NumberLevel extends Node3D
 
 signal won_game
+signal try_again
 
 @onready var math_question_label: Label3D = $MathQuestionLabel
 @onready var deposit_area_1: DepositArea = $DepositArea1
@@ -13,7 +14,7 @@ var second_num : int
 func _ready() -> void:
 	_generate_math_calc()
 	
-	deposit_area_1.planets_inside_changed.connect(_verify_planed_stored)
+	#deposit_area_1.planets_inside_changed.connect(_verify_planed_stored)
 
 
 func _generate_math_calc() -> void:
@@ -32,4 +33,7 @@ func _verify_planed_stored() -> void:
 		math_question_label.text = str(
 			first_num, " + ", second_num, " = ", (first_num + second_num), "\n",
 			"Acertou!"
+		
 		)
+	else:
+		try_again.emit()

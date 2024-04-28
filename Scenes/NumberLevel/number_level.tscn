@@ -97,6 +97,17 @@ text = "Coloque os planetas na caixinha de acordo a operação matemática."
 horizontal_alignment = 2
 autowrap_mode = 3
 
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_right = 123.0
+offset_bottom = 63.0
+grow_horizontal = 2
+text = "Confirmar Resposta"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cvbnf")
 
@@ -177,4 +188,6 @@ shape = SubResource("WorldBoundaryShape3D_d0tqr")
 [node name="DepositArea1" parent="." instance=ExtResource("3_ircfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1, 1)
 
+[connection signal="try_again" from="." to="WinText" method="_on_number_level_try_again"]
 [connection signal="won_game" from="." to="WinText" method="_on_number_level_won_game"]
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_verify_planed_stored"]
