@@ -40,7 +40,8 @@ func _process(delta):
 			"Multiplier : ", multiplier, "\n",
 			"Is tilting = ", accelerometer != Vector3.ZERO,
 		)
-		exemple_mesh.rotation_degrees = accelerometer
+		exemple_mesh.rotation_degrees.x = accelerometer.x
+		exemple_mesh.rotation_degrees.y = accelerometer.y
 
 
 func _on_invert_xbtn_toggled(toggled_on):

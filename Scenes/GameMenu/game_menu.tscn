@@ -118,6 +118,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Control/VBoxContainer:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_fuifb"]
 resource_name = "MainMenu"
@@ -164,6 +176,18 @@ tracks/3/path = NodePath("CoresLevelButton:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Control/VBoxContainer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -239,6 +263,18 @@ tracks/5/path = NodePath("CoresLevelButton:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Control/VBoxContainer:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -914,37 +950,63 @@ max_value = 1.0
 step = 0.1
 value = 1.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="Control" parent="Control"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 520.0
-offset_right = -16.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+mouse_filter = 2
 
 [node name="ChangeSceneButton" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
 layout_mode = 2
+offset_left = 343.0
+offset_top = 669.0
+offset_right = 523.0
+offset_bottom = 700.0
 text = "Ir para a cena de teste"
 scene_to_change = "TestScene1"
 
 [node name="ChangeSceneButton2" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
 layout_mode = 2
-text = "Ir para jogo abacaba"
+offset_left = 301.0
+offset_top = 125.0
+offset_right = 467.0
+offset_bottom = 280.0
+text = ""
+flat = true
 scene_to_change = "Abacaba"
 
 [node name="ChangeSceneButton4" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
 layout_mode = 2
-text = "Ir para jogo números"
+offset_left = 568.0
+offset_top = 296.0
+offset_right = 709.0
+offset_bottom = 432.0
+text = ""
+flat = true
 scene_to_change = "Numeros"
 
 [node name="ChangeSceneButton3" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
 layout_mode = 2
+offset_left = 16.0
+offset_top = 647.0
+offset_right = 330.0
+offset_bottom = 709.0
 text = "Ir para teste de acelerometro"
 scene_to_change = "Acelerometro"
+
+[node name="ChangeSceneButton5" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 200.0
+offset_right = 1104.0
+offset_bottom = 352.0
+text = ""
+flat = true
+scene_to_change = "Cores"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
@@ -1004,6 +1066,14 @@ text_to_show = "Números"
 should_change_scene = true
 scene_to_change = "Numeros"
 
+[node name="Label3D" parent="MenuScene/NumerosLevelButton" index="1"]
+text = "Números"
+
+[node name="ClickableArea" parent="MenuScene/NumerosLevelButton" index="2"]
+input_ray_pickable = false
+monitoring = false
+monitorable = false
+
 [node name="AbacabaLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
 transform = Transform3D(0.513481, -0.17226, -1.08761, 0, 1.20004, -0.190068, 1.10116, 0.0803262, 0.507159, 8.93, 2.945, 2.13)
 visible = false
@@ -1011,12 +1081,28 @@ text_to_show = "Abacaba"
 should_change_scene = true
 scene_to_change = "Abacaba"
 
+[node name="Label3D" parent="MenuScene/AbacabaLevelButton" index="1"]
+text = "Abacaba"
+
+[node name="ClickableArea" parent="MenuScene/AbacabaLevelButton" index="2"]
+input_ray_pickable = false
+monitoring = false
+monitorable = false
+
 [node name="CoresLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
 transform = Transform3D(-0.834181, 0, -0.791608, 0, 1.15, 0, 0.791608, 0, -0.834181, 9.07, 1.59, 14.09)
 visible = false
 text_to_show = "Cores"
 should_change_scene = true
 scene_to_change = "Cores"
+
+[node name="Label3D" parent="MenuScene/CoresLevelButton" index="1"]
+text = "Cores"
+
+[node name="ClickableArea" parent="MenuScene/CoresLevelButton" index="2"]
+input_ray_pickable = false
+monitoring = false
+monitorable = false
 
 [node name="Astronaut" type="Node3D" parent="MenuScene"]
 transform = Transform3D(0.59714, -0.229143, 0.768712, 0.22346, 0.967913, 0.114937, -0.770383, 0.103143, 0.629183, -4.9, -2.075, 4.475)
@@ -1052,3 +1138,7 @@ libraries = {
 }
 autoplay = "astronauta"
 speed_scale = 0.2
+
+[editable path="MenuScene/NumerosLevelButton"]
+[editable path="MenuScene/AbacabaLevelButton"]
+[editable path="MenuScene/CoresLevelButton"]
