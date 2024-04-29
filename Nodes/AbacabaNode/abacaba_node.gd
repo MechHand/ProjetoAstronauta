@@ -10,12 +10,21 @@ signal _player_won
 @onready var first_word: Label3D = %FirstWord
 @onready var second_word: Label3D = %SecondWord
 @onready var creature_sprite: Sprite3D = %CreatureSprite
+@onready var creature_mesh: MeshInstance3D = %CreatureMesh
+@onready var box_animations: AnimationPlayer = %BoxAnimations
 
 @onready var creature_images : Dictionary = {
 	"Cachorro" : load("res://Nodes/AbacabaNode/PlaceholdImgs/cachorro.png"),
 	"Gato" : load("res://Nodes/AbacabaNode/PlaceholdImgs/gato.png"),
 	"Pato" : load("res://Nodes/AbacabaNode/PlaceholdImgs/pato.png")
 }
+
+@onready var creature_meshes : Dictionary = {
+	"Cachorro" : load("res://Resources/AbacabaLevel_Assets/Models/DogModel_Cylinder_004.res"),
+	"Gato" : load("res://Resources/AbacabaLevel_Assets/Models/CatModel_Cube_002.res"),
+	"Pato" : load("res://Resources/AbacabaLevel_Assets/Models/DuckModel_Cube_001.res")
+}
+
 
 var has_focus : bool = false
 var correct_word : int = 0
@@ -89,8 +98,10 @@ func _handle_win() -> void:
 func _show_creature() -> void:
 	first_word.visible = true
 	second_word.visible = true
+	box_animations.play("Opening")
 	
 	creature_sprite.texture = creature_images.get(creature)
+	creature_mesh.mesh = creature_meshes.get(creature)
 	
 	_was_clicked.emit(self)
 
