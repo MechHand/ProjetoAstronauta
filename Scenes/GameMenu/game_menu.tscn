@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=40 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
 [ext_resource type="PackedScene" uid="uid://d2ws0kl0rdnf2" path="res://Nodes/ClickableModel/planet_button.tscn" id="2_47hqd"]
 [ext_resource type="Script" path="res://Scenes/GameMenu/MenuAnimations.gd" id="3_ieas3"]
+[ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
 
 [sub_resource type="Gradient" id="Gradient_kkdka"]
 offsets = PackedFloat32Array(0.915094, 1)
@@ -1066,6 +1067,9 @@ text_to_show = "Números"
 should_change_scene = true
 scene_to_change = "Numeros"
 
+[node name="Icosphere" parent="MenuScene/NumerosLevelButton" index="0"]
+mesh = ExtResource("5_jcwh1")
+
 [node name="Label3D" parent="MenuScene/NumerosLevelButton" index="1"]
 text = "Números"
 
@@ -1081,6 +1085,9 @@ text_to_show = "Abacaba"
 should_change_scene = true
 scene_to_change = "Abacaba"
 
+[node name="Icosphere" parent="MenuScene/AbacabaLevelButton" index="0"]
+mesh = ExtResource("5_jcwh1")
+
 [node name="Label3D" parent="MenuScene/AbacabaLevelButton" index="1"]
 text = "Abacaba"
 
@@ -1095,6 +1102,9 @@ visible = false
 text_to_show = "Cores"
 should_change_scene = true
 scene_to_change = "Cores"
+
+[node name="Icosphere" parent="MenuScene/CoresLevelButton" index="0"]
+mesh = ExtResource("5_jcwh1")
 
 [node name="Label3D" parent="MenuScene/CoresLevelButton" index="1"]
 text = "Cores"

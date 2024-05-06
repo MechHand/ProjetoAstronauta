@@ -149,7 +149,6 @@ billboard = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="BoxCover2" parent="BoxBottom2" instance=ExtResource("2_1jxjo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="BoxAnimations" type="AnimationPlayer" parent="BoxBottom2"]
 unique_name_in_owner = true

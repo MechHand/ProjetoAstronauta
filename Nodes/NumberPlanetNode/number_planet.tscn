@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://nrn6j5ux1nx4"]
 
 [ext_resource type="Script" path="res://Nodes/NumberPlanetNode/number_planet.gd" id="1_c882b"]
-[ext_resource type="ArrayMesh" path="res://Resources/NumbersLevelAssets/Star/Star_Cylinder.res" id="2_gl6ou"]
+[ext_resource type="ArrayMesh" uid="uid://dwy8ke6wql4ck" path="res://Resources/NumbersLevelAssets/Star/Star_Cylinder.res" id="2_gl6ou"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7qt81"]
 friction = 0.5
