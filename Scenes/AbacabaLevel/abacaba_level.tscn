@@ -1,37 +1,41 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8i3u6c3teomi"]
+[gd_scene load_steps=8 format=3 uid="uid://b8i3u6c3teomi"]
 
 [ext_resource type="PackedScene" uid="uid://c66lldqedf65l" path="res://Nodes/AbacabaNode/abacaba_node.tscn" id="1_3jbyo"]
 [ext_resource type="Script" path="res://Scenes/AbacabaLevel/abacaba_level.gd" id="1_aqspj"]
+[ext_resource type="Texture2D" uid="uid://cwnkclbbno0hw" path="res://SkyBox/free_-_skybox_space_nebula_0.jpg" id="2_dgr2n"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="3_84hty"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hkmo4"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bem7w"]
+panorama = ExtResource("2_dgr2n")
 
 [sub_resource type="Sky" id="Sky_d2fof"]
-sky_material = SubResource("ProceduralSkyMaterial_hkmo4")
+sky_material = SubResource("PanoramaSkyMaterial_bem7w")
 
 [sub_resource type="Environment" id="Environment_xhfnu"]
 background_mode = 2
 sky = SubResource("Sky_d2fof")
-tonemap_mode = 2
+sky_custom_fov = 98.5
+sky_rotation = Vector3(3.81529, -3.11367, 0)
+tonemap_exposure = 0.47
 glow_enabled = true
 
 [node name="abacaba_level" type="Node3D" node_paths=PackedStringArray("abacaba_nodes")]
 script = ExtResource("1_aqspj")
-abacaba_nodes = [NodePath("AbacabaNode"), NodePath("AbacabaNode2"), NodePath("AbacabaNode3")]
+abacaba_nodes = [NodePath("AbacabaNode"), NodePath("AbacabaNode2"), NodePath("AbacabaNode3"), NodePath("AbacabaNode4")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xhfnu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.25, 0.460541, -0.496117, 0.73605, -0.194692, 0.752572, 0.62907, 0, 0, 0)
+light_energy = 3.854
 shadow_enabled = true
 
 [node name="GameCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 
 [node name="AbacabaNode" parent="." instance=ExtResource("1_3jbyo")]
+correct_letter = "CA"
 
 [node name="AbacabaNode2" parent="." instance=ExtResource("1_3jbyo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
@@ -42,6 +46,11 @@ creature = "Gato"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 correct_letter = "PA"
 creature = "Pato"
+
+[node name="AbacabaNode4" parent="." instance=ExtResource("1_3jbyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.38763, 0)
+correct_letter = "DA"
+creature = "Dado"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

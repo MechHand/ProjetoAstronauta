@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgtnwyxud2qn7"
-path="res://.godot/imported/DogModel.glb-e8de53e7d7cb9fca71cf6849deb6a761.scn"
+uid="uid://drb4e075xeh3q"
+path="res://.godot/imported/DogModel (1).glb-06b440d70a524528e440d7a6d715f0dd.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/Models/DogModel.glb"
-dest_files=["res://.godot/imported/DogModel.glb-e8de53e7d7cb9fca71cf6849deb6a761.scn"]
+source_file="res://Resources/AbacabaLevel_Assets/Models/DogModel (1).glb"
+dest_files=["res://.godot/imported/DogModel (1).glb-06b440d70a524528e440d7a6d715f0dd.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=0.1
+nodes/root_scale=0.4
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"DogModel_Cylinder_004": {
+"DogModel (1)_Cylinder_004": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/DogModel_Cylinder_004.res"
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/DogModel (1)_Cylinder_004.res"
 }
 }
 }
