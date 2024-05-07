@@ -5,7 +5,7 @@ signal _player_won
 
 @export_category("Abacaba Rules")
 @export var correct_letter : String = "A"
-@export_enum("Cachorro", "Gato", "Pato") var creature : String = "Cachorro"
+@export_enum("Cachorro", "Gato", "Pato", "Jacare") var creature : String = "Cachorro"
 
 @onready var first_word: Label3D = %FirstWord
 @onready var second_word: Label3D = %SecondWord
@@ -22,7 +22,19 @@ signal _player_won
 @onready var creature_meshes : Dictionary = {
 	"Cachorro" : load("res://Resources/AbacabaLevel_Assets/Models/DogModel_Cylinder_004.res"),
 	"Gato" : load("res://Resources/AbacabaLevel_Assets/Models/CatModel_Cube_002.res"),
-	"Pato" : load("res://Resources/AbacabaLevel_Assets/Models/DuckModel_Cube_001.res")
+	"Pato" : load("res://Resources/AbacabaLevel_Assets/Models/DuckModel_Cube_001.res"),
+	"Jacare" : load("res://Resources/AbacabaLevel_Assets/Models/Alligator_Cube_003.res"),
+	"Abelha" : load("res://Resources/AbacabaLevel_Assets/Models/BeeModel_Cube_001.res"),
+	"Xadrez" : load("res://Resources/AbacabaLevel_Assets/Models/Chess_Cube.res"),
+	"Dado" : load("res://Resources/AbacabaLevel_Assets/Models/Dice_Cube_001.res"),
+	"Farol" : load("res://Resources/AbacabaLevel_Assets/Models/LightHouse_Cylinder.res"),
+	"Macaco" : load("res://Resources/AbacabaLevel_Assets/Models/MonkeyModel_Cube_004.res"),
+	"Nabo" : load("res://Resources/AbacabaLevel_Assets/Models/Nabo_Sphere.res"),
+	"Laranja" : load("res://Resources/AbacabaLevel_Assets/Models/Orange_Cylinder_002.res"),
+	"Rato" : load("res://Resources/AbacabaLevel_Assets/Models/RatModel_Cube.res"),
+	"Quadrado" : load("res://Resources/AbacabaLevel_Assets/Models/Square_Cube_002.res"),
+	"Baleia" : load("res://Resources/AbacabaLevel_Assets/Models/WhaleModel_Cube_003.res"),
+	"Zabumba" : load("res://Resources/AbacabaLevel_Assets/Models/Zabumba_Cylinder_003.res")
 }
 
 
