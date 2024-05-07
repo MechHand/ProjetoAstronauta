@@ -21,7 +21,7 @@ glow_enabled = true
 
 [node name="abacaba_level" type="Node3D" node_paths=PackedStringArray("abacaba_nodes")]
 script = ExtResource("1_aqspj")
-abacaba_nodes = [NodePath("AbacabaNode"), NodePath("AbacabaNode2"), NodePath("AbacabaNode3"), NodePath("AbacabaNode4")]
+abacaba_nodes = [NodePath("AbacabaNode"), NodePath("AbacabaNode2"), NodePath("AbacabaNode3"), NodePath("AbacabaNode4"), NodePath("AbacabaNode5"), NodePath("AbacabaNode6")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xhfnu")
@@ -37,10 +37,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 [node name="AbacabaNode" parent="." instance=ExtResource("1_3jbyo")]
 correct_letter = "CA"
 
+[node name="AbacabaNode5" parent="." instance=ExtResource("1_3jbyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.33471, 0)
+correct_letter = "MA"
+creature = "Macaco"
+
 [node name="AbacabaNode2" parent="." instance=ExtResource("1_3jbyo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 correct_letter = "GA"
 creature = "Gato"
+
+[node name="AbacabaNode6" parent="." instance=ExtResource("1_3jbyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.35903, 0)
+correct_letter = "LA"
+creature = "Laranja"
 
 [node name="AbacabaNode3" parent="." instance=ExtResource("1_3jbyo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
