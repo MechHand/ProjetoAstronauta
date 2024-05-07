@@ -5,7 +5,7 @@ signal _player_won
 
 @export_category("Abacaba Rules")
 @export var correct_letter : String = "A"
-@export_enum("Cachorro", "Gato", "Pato", "Jacare") var creature : String = "Cachorro"
+@export_enum("Cachorro", "Gato", "Pato", "Jacare","Abelha","Xadrez","Dado","Farol","Macaco","Nabo","Laranja","Rato","Quadrado","Baleia","Zabumba") var creature : String = "Cachorro"
 
 @onready var first_word: Label3D = %FirstWord
 @onready var second_word: Label3D = %SecondWord
@@ -20,7 +20,7 @@ signal _player_won
 }
 
 @onready var creature_meshes : Dictionary = {
-	"Cachorro" : load("res://Resources/AbacabaLevel_Assets/Models/DogModel_Cylinder_004.res"),
+	"Cachorro" : load("res://Resources/AbacabaLevel_Assets/Models/DogModel (1)_Cylinder_004.res"),
 	"Gato" : load("res://Resources/AbacabaLevel_Assets/Models/CatModel_Cube_002.res"),
 	"Pato" : load("res://Resources/AbacabaLevel_Assets/Models/DuckModel_Cube_001.res"),
 	"Jacare" : load("res://Resources/AbacabaLevel_Assets/Models/Alligator_Cube_003.res"),

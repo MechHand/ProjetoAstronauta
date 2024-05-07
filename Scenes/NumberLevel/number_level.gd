@@ -10,9 +10,11 @@ var first_num : int
 var second_num : int
 
 @onready var math_question_node: Node3D = $MathQuestionNode
+@onready var audio_stream_player = $AudioStreamPlayer
 
 func _ready() -> void:
 	_generate_math_calc()
+	audio_stream_player.play()
 	
 	#deposit_area_1.planets_inside_changed.connect(_verify_planed_stored)
 

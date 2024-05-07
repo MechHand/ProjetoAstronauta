@@ -1,49 +1,30 @@
-[gd_scene load_steps=40 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=39 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
 [ext_resource type="PackedScene" uid="uid://d2ws0kl0rdnf2" path="res://Nodes/ClickableModel/planet_button.tscn" id="2_47hqd"]
+[ext_resource type="Texture2D" uid="uid://cwnkclbbno0hw" path="res://SkyBox/free_-_skybox_space_nebula_0.jpg" id="2_66sax"]
 [ext_resource type="Script" path="res://Scenes/GameMenu/MenuAnimations.gd" id="3_ieas3"]
 [ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
+[ext_resource type="AudioStream" uid="uid://ceo5v7dc6ikqt" path="res://SFX/Trilha sem mixagem.wav" id="6_vo550"]
 
-[sub_resource type="Gradient" id="Gradient_kkdka"]
-offsets = PackedFloat32Array(0.915094, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_hn5b4"]
-noise_type = 0
-frequency = 0.2
-fractal_type = 0
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ceybf"]
-in_3d_space = true
-seamless = true
-seamless_blend_skirt = 1.0
-color_ramp = SubResource("Gradient_kkdka")
-noise = SubResource("FastNoiseLite_hn5b4")
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64cwm"]
-sky_top_color = Color(0.0823529, 0, 0.537255, 1)
-sky_horizon_color = Color(0.0823529, 0, 0.537255, 1)
-sky_cover = SubResource("NoiseTexture2D_ceybf")
-sky_cover_modulate = Color(0, 0.309804, 0.309804, 1)
-ground_bottom_color = Color(0.0823529, 0, 0.537255, 1)
-ground_horizon_color = Color(0.0823529, 0, 0.537255, 1)
-sun_angle_max = 0.0
-use_debanding = false
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6mpo0"]
+panorama = ExtResource("2_66sax")
 
 [sub_resource type="Sky" id="Sky_c4o82"]
-sky_material = SubResource("ProceduralSkyMaterial_64cwm")
-process_mode = 2
+sky_material = SubResource("PanoramaSkyMaterial_6mpo0")
 
 [sub_resource type="Environment" id="Environment_tt4qe"]
 background_mode = 2
-background_color = Color(0, 0, 0.286275, 1)
+background_color = Color(0, 0.088284, 0.087742, 1)
+background_energy_multiplier = 0.2
 sky = SubResource("Sky_c4o82")
-sky_rotation = Vector3(-1.5708, 0, 0)
+sky_custom_fov = 68.6
+sky_rotation = Vector3(-1.5708, 0, 1.71042)
 ambient_light_source = 2
-ambient_light_color = Color(0, 0, 0.356863, 1)
-ambient_light_energy = 1.71
-tonemap_mode = 2
+ambient_light_color = Color(0.0182924, 0.1143, 0.120153, 1)
+ambient_light_energy = 4.45
 glow_enabled = true
+glow_intensity = 0.62
 
 [sub_resource type="Animation" id="Animation_pxxdp"]
 resource_name = "LevelSelection"
@@ -1042,7 +1023,7 @@ vertical_alignment = 1
 environment = SubResource("Environment_tt4qe")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="MenuScene"]
-transform = Transform3D(0.965927, -0.224141, 0.129407, 2.24697e-08, 0.499998, 0.866027, -0.258816, -0.836518, 0.482961, 0, 0, 0)
+transform = Transform3D(0.665465, 0.682771, -0.301631, -0.303814, 0.61687, 0.726064, 0.681802, -0.39153, 0.61794, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="MenuScene"]
@@ -1148,6 +1129,11 @@ libraries = {
 }
 autoplay = "astronauta"
 speed_scale = 0.2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vo550")
+volume_db = 24.0
+autoplay = true
 
 [editable path="MenuScene/NumerosLevelButton"]
 [editable path="MenuScene/AbacabaLevelButton"]
