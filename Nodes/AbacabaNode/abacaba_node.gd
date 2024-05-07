@@ -5,7 +5,7 @@ signal _player_won
 
 @export_category("Abacaba Rules")
 @export var correct_letter : String = "A"
-@export_enum("Cachorro", "Gato", "Pato", "Jacare","Abelha","Xadrez","Dado","Farol","Macaco","Nabo","Laranja","Rato","Quadrado","Baleia","Zabumba") var creature : String = "Cachorro"
+@export_enum("Cachorro", "Gato", "Pato", "Jacare") var creature : String = "Cachorro"
 
 @onready var first_word: Label3D = %FirstWord
 @onready var second_word: Label3D = %SecondWord
