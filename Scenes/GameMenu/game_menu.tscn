@@ -1,10 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=39 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
 [ext_resource type="PackedScene" uid="uid://d2ws0kl0rdnf2" path="res://Nodes/ClickableModel/planet_button.tscn" id="2_47hqd"]
 [ext_resource type="Texture2D" uid="uid://cwnkclbbno0hw" path="res://SkyBox/free_-_skybox_space_nebula_0.jpg" id="2_66sax"]
 [ext_resource type="Script" path="res://Scenes/GameMenu/MenuAnimations.gd" id="3_ieas3"]
 [ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
+[ext_resource type="AudioStream" uid="uid://ceo5v7dc6ikqt" path="res://SFX/Trilha sem mixagem.wav" id="6_vo550"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6mpo0"]
 panorama = ExtResource("2_66sax")
@@ -1128,6 +1129,11 @@ libraries = {
 }
 autoplay = "astronauta"
 speed_scale = 0.2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vo550")
+volume_db = 24.0
+autoplay = true
 
 [editable path="MenuScene/NumerosLevelButton"]
 [editable path="MenuScene/AbacabaLevelButton"]

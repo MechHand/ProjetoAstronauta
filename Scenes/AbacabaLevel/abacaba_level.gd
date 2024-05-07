@@ -5,11 +5,13 @@ static var camera_on_focus : bool = false
 
 @onready var game_camera: Camera3D = $GameCamera
 @onready var win_text: Label3D = $WinText
+@onready var audio_stream_player = $AudioStreamPlayer
 
 
 func _ready() -> void:
 	win_text.visible = false
 	_get_abacabas_and_listen()
+	audio_stream_player.play()
 
 
 func _get_abacabas_and_listen() -> void:

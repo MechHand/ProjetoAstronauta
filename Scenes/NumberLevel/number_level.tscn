@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://drfg4df25ca2s"]
+[gd_scene load_steps=16 format=3 uid="uid://drfg4df25ca2s"]
 
 [ext_resource type="PackedScene" uid="uid://nrn6j5ux1nx4" path="res://Nodes/NumberPlanetNode/number_planet.tscn" id="1_kgjds"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/number_level.gd" id="1_stip1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cwnkclbbno0hw" path="res://SkyBox/free_-_skybox_space_nebula_0.jpg" id="3_k5jr0"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/WinText.gd" id="3_pinu4"]
 [ext_resource type="PackedScene" uid="uid://cd3ilt6nnp08i" path="res://Nodes/MathQuestionNode/math_question_node.tscn" id="5_6k77e"]
+[ext_resource type="AudioStream" uid="uid://cm3jpatcsj75m" path="res://SFX/Narração Matemática.wav" id="8_vjl7j"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ix841"]
 panorama = ExtResource("3_k5jr0")
@@ -167,6 +168,10 @@ shape = SubResource("WorldBoundaryShape3D_d0tqr")
 
 [node name="DepositArea1" parent="." instance=ExtResource("3_ircfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vjl7j")
+volume_db = 9.503
 
 [connection signal="try_again" from="." to="WinText" method="_on_number_level_try_again"]
 [connection signal="won_game" from="." to="WinText" method="_on_number_level_won_game"]
