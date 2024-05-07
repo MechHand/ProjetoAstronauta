@@ -1133,7 +1133,7 @@ mesh = SubResource("ArrayMesh_m8p0t")
 skeleton = NodePath("")
 
 [node name="AstronautBody" type="MeshInstance3D" parent="MenuScene/Astronaut"]
-transform = Transform3D(0.0283542, -0.0014771, -2.13943e-10, 0.00184021, 0.00374341, -0.0262474, 0.00414755, 0.00843708, 0.0116456, 1.72299, 0.615961, 0.0537894)
+transform = Transform3D(0.0283542, -0.0014771, -6.98492e-10, 0.00184021, 0.00374341, -0.0262474, 0.00414755, 0.00843708, 0.0116456, 1.72299, 0.615961, 0.0537896)
 mesh = SubResource("ArrayMesh_8trbr")
 skeleton = NodePath("")
 

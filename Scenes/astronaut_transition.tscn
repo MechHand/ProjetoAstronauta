@@ -45,7 +45,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"transitions": PackedFloat32Array(1.23114, 1.23114, 1.23114, 1.23114, 1.23114),
 "update": 0,
 "values": [Vector3(0, 0.273, 0), Vector3(0, -1, 2), Vector3(0, 1, 4), Vector3(0, -1, 6), Vector3(0, 1, 8)]
 }
@@ -56,10 +56,10 @@ tracks/1/path = NodePath("Astronaut:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 1.4, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.610865, 0, 0), Vector3(-0.179769, 0, 0), Vector3(-0.610865, 0, 0), Vector3(0.610865, 0, 0), Vector3(-0.610865, 0, 0)]
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4),
+"transitions": PackedFloat32Array(1.23114, 1.23114, 1.23114, 1.23114, 1.23114, 1.23114, 1.23114, 1.23114, 1.23114),
+"update": 2,
+"values": [Vector3(0, 0, 0), Vector3(0.342591, 0, 0), Vector3(0, 0, 0), Vector3(-0.211115, 0, 0), Vector3(0, 0, 0), Vector3(0.342591, 0, 0), Vector3(0, 0, 0), Vector3(-0.211115, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ok3t4"]
@@ -85,7 +85,7 @@ transform = Transform3D(1, 0, 0, 0, 0.451765, 0.892137, 0, -0.892137, 0.451765, 
 [node name="AstronautAntenna" parent="AstronautWithRocket/Astronaut" instance=ExtResource("4_mnxxm")]
 
 [node name="Spaceship" parent="AstronautWithRocket/Astronaut" instance=ExtResource("5_6rm2g")]
-transform = Transform3D(0.205453, -3.47308e-08, -0.978667, -0.978667, -4.27789e-08, -0.205453, -3.47308e-08, 1, -4.27789e-08, 0, -0.272625, -0.526917)
+transform = Transform3D(0.205453, -3.47308e-08, -0.978667, -0.978667, -5.96046e-08, -0.205453, 2.98023e-08, 1, -5.21541e-08, 0, -0.272625, -0.526917)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AstronautWithRocket"]
 libraries = {
