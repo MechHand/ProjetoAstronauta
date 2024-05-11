@@ -1,30 +1,19 @@
 [gd_scene load_steps=39 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
+[ext_resource type="Texture2D" uid="uid://b1yu552mmh1s1" path="res://SkyBox/skyBox.png" id="2_4sr83"]
 [ext_resource type="PackedScene" uid="uid://d2ws0kl0rdnf2" path="res://Nodes/ClickableModel/planet_button.tscn" id="2_47hqd"]
-[ext_resource type="Texture2D" uid="uid://cwnkclbbno0hw" path="res://SkyBox/free_-_skybox_space_nebula_0.jpg" id="2_66sax"]
 [ext_resource type="Script" path="res://Scenes/GameMenu/MenuAnimations.gd" id="3_ieas3"]
 [ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
 [ext_resource type="AudioStream" uid="uid://ceo5v7dc6ikqt" path="res://SFX/Trilha sem mixagem.wav" id="6_vo550"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6mpo0"]
-panorama = ExtResource("2_66sax")
+[sub_resource type="Environment" id="Environment_w7ook"]
+background_mode = 1
 
-[sub_resource type="Sky" id="Sky_c4o82"]
-sky_material = SubResource("PanoramaSkyMaterial_6mpo0")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8yt1"]
+albedo_texture = ExtResource("2_4sr83")
 
-[sub_resource type="Environment" id="Environment_tt4qe"]
-background_mode = 2
-background_color = Color(0, 0.088284, 0.087742, 1)
-background_energy_multiplier = 0.2
-sky = SubResource("Sky_c4o82")
-sky_custom_fov = 68.6
-sky_rotation = Vector3(-1.5708, 0, 1.71042)
-ambient_light_source = 2
-ambient_light_color = Color(0.0182924, 0.1143, 0.120153, 1)
-ambient_light_energy = 4.45
-glow_enabled = true
-glow_intensity = 0.62
+[sub_resource type="PlaneMesh" id="PlaneMesh_2uu5n"]
 
 [sub_resource type="Animation" id="Animation_pxxdp"]
 resource_name = "LevelSelection"
@@ -1020,15 +1009,21 @@ vertical_alignment = 1
 [node name="MenuScene" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="MenuScene"]
-environment = SubResource("Environment_tt4qe")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MenuScene"]
-transform = Transform3D(0.665465, 0.682771, -0.301631, -0.303814, 0.61687, 0.726064, 0.681802, -0.39153, 0.61794, 0, 0, 0)
-shadow_enabled = true
+environment = SubResource("Environment_w7ook")
 
 [node name="Camera3D" type="Camera3D" parent="MenuScene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 current = true
+
+[node name="BackGround" type="MeshInstance3D" parent="MenuScene/Camera3D"]
+transform = Transform3D(23.764, 0, 0, 0, -0.0532145, -11.3476, 0, 3.40258, -0.17747, -0.37, -0.297, -13.387)
+material_override = SubResource("StandardMaterial3D_e8yt1")
+mesh = SubResource("PlaneMesh_2uu5n")
+skeleton = NodePath("../../WorldEnvironment")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MenuScene/Camera3D"]
+transform = Transform3D(0.925705, 0.321114, 0.199892, -0.378047, 0.768293, 0.516533, 0.0122906, -0.553726, 0.832608, 0, 0, -7)
+light_energy = 1.522
 
 [node name="IniciarButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
 scene_to_change = "Numeros"
@@ -1060,7 +1055,7 @@ monitoring = false
 monitorable = false
 
 [node name="AbacabaLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
-transform = Transform3D(0.513481, -0.17226, -1.08761, 0, 1.20004, -0.190068, 1.10116, 0.0803262, 0.507159, 8.93, 2.945, 2.13)
+transform = Transform3D(0.513481, -0.17226, -1.08761, 0, 1.20004, -0.190068, 1.10116, 0.0803262, 0.507159, 8.93, 1.76661, 2.13)
 visible = false
 text_to_show = "Abacaba"
 should_change_scene = true
@@ -1078,7 +1073,7 @@ monitoring = false
 monitorable = false
 
 [node name="CoresLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
-transform = Transform3D(-0.834181, 0, -0.791608, 0, 1.15, 0, 0.791608, 0, -0.834181, 9.07, 1.59, 14.09)
+transform = Transform3D(-0.834181, 0, -0.791608, 0, 1.15, 0, 0.791608, 0, -0.834181, 9.07, 0.411606, 14.09)
 visible = false
 text_to_show = "Cores"
 should_change_scene = true

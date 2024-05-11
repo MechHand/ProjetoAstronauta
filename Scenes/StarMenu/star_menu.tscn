@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgfeki3lw18fj"]
+
+[ext_resource type="ArrayMesh" uid="uid://dwy8ke6wql4ck" path="res://Resources/NumbersLevelAssets/Star/Star_Cylinder.res" id="1_j07sh"]
+
+[node name="StarMenu" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_j07sh")
