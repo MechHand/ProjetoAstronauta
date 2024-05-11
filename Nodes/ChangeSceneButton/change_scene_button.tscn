@@ -10,6 +10,7 @@ extends Button
 ## The scene that the game is suposed to change.
 @export var scene_to_change : String
 
+@export var set_menu_on_selection : bool = false
 
 ## Connects the pressed signal to call the SceneManager autoload.
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 
 ## When pressed, change to the scene stored in [param scene_to_change].
 func _change_scene() -> void:
+	SceneManager.start_menu_on_selection = set_menu_on_selection
 	SceneManager._change_scene_to(scene_to_change)
 "
 

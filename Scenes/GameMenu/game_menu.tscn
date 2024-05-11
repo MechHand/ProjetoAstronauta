@@ -941,24 +941,37 @@ text = "Ir para a cena de teste"
 scene_to_change = "TestScene1"
 
 [node name="ChangeSceneButton2" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 301.0
-offset_top = 125.0
+offset_top = 243.0
 offset_right = 467.0
-offset_bottom = 280.0
+offset_bottom = 398.0
 text = ""
 flat = true
 scene_to_change = "Abacaba"
 
 [node name="ChangeSceneButton4" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 568.0
-offset_top = 296.0
+offset_top = 351.0
 offset_right = 709.0
-offset_bottom = 432.0
+offset_bottom = 487.0
 text = ""
 flat = true
 scene_to_change = "Numeros"
+
+[node name="ChangeSceneButton5" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 928.0
+offset_top = 318.0
+offset_right = 1104.0
+offset_bottom = 470.0
+text = ""
+flat = true
+scene_to_change = "Cores"
 
 [node name="ChangeSceneButton3" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
 layout_mode = 2
@@ -968,16 +981,6 @@ offset_right = 330.0
 offset_bottom = 709.0
 text = "Ir para teste de acelerometro"
 scene_to_change = "Acelerometro"
-
-[node name="ChangeSceneButton5" parent="Control/VBoxContainer" instance=ExtResource("1_wo0l7")]
-layout_mode = 0
-offset_left = 928.0
-offset_top = 200.0
-offset_right = 1104.0
-offset_bottom = 352.0
-text = ""
-flat = true
-scene_to_change = "Cores"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
@@ -1026,6 +1029,7 @@ transform = Transform3D(0.925705, 0.321114, 0.199892, -0.378047, 0.768293, 0.516
 light_energy = 1.522
 
 [node name="IniciarButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
+should_play_anim = false
 scene_to_change = "Numeros"
 
 [node name="MenuAnimations" type="AnimationPlayer" parent="MenuScene" node_paths=PackedStringArray("iniciar_button")]

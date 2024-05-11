@@ -4,14 +4,19 @@ signal _was_clicked (abacaba_node : AbacabaNode)
 signal _player_won
 
 @export_category("Abacaba Rules")
+@export var abacaba_level : AbacabaLevel
 @export var correct_letter : String = "A"
 @export_enum("Abelha","Baleia","Cachorro","Dado","Farol", "Gato","Jacare","Laranja","Macaco","Nabo","Pato","Quadrado","Rato","Xadrez","Zabumba") var creature : String = "Cachorro"
+
+static var creature_names : Array[String] = ["Abelha","Baleia","Cachorro","Dado","Farol", "Gato","Jacare","Laranja","Macaco","Nabo","Pato","Quadrado","Rato","Xadrez","Zabumba"]
+static var uncomplete_creature_names : Array[String] = ["_belha","__leia","__chorro","__do","__rol", "__to","__care","__ranja","__caco","__bo","_to","___drado","__to","__drez","__bumba"]
 
 @onready var first_word: Label3D = %FirstWord
 @onready var second_word: Label3D = %SecondWord
 @onready var creature_sprite: Sprite3D = %CreatureSprite
 @onready var creature_mesh: MeshInstance3D = %CreatureMesh
 @onready var box_animations: AnimationPlayer = %BoxAnimations
+@onready var word_hint: Label3D = %WordHint
 
 @onready var creature_images : Dictionary = {
 	"Cachorro" : load("res://Nodes/AbacabaNode/PlaceholdImgs/cachorro.png"),
@@ -64,6 +69,10 @@ const letter_array : Array[String] = [
 ]
 
 
+func _ready() -> void:
+	abacaba_level.reset_game.connect(_restart_node)
+
+
 ## Return a letter that is not the current Abacaba letter.
 static func _get_random_letter(except : String = "A") -> String:
 	randomize()
@@ -78,10 +87,6 @@ static func _get_random_letter(except : String = "A") -> String:
 	#print(random_letter)
 	
 	return random_letter
-
-
-func _ready() -> void:
-	_set_words()
 
 
 func _set_words() -> void:
@@ -99,11 +104,17 @@ func _set_words() -> void:
 	correct_word = choosen_word
 	first_word.visible = false
 	second_word.visible = false
+	
+	word_hint.text = uncomplete_creature_names[creature_names.find(creature)]
 
 
 func _handle_win() -> void:
-	visible = false
 	has_won = true
+	word_hint.text = creature_names[creature_names.find(creature)]
+	
+	await get_tree().create_timer(1.5).timeout
+	
+	visible = false
 	_player_won.emit()
 
 
@@ -156,3 +167,12 @@ func _on_second_word_collision_input_event(camera: Node, event: InputEvent, posi
 						_handle_win()
 					else:
 						print("Wrong word!")
+
+
+func _restart_node() -> void:
+	visible = true
+	has_won = false
+	creature_mesh.mesh = null
+	has_focus = false
+	
+	box_animations.play(&"RESET")

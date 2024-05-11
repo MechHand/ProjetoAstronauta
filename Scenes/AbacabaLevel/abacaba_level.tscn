@@ -35,17 +35,20 @@ shadow_enabled = true
 [node name="GameCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 
-[node name="AbacabaNode" parent="." instance=ExtResource("1_3jbyo")]
-transform = Transform3D(3.00268, 0, 0, 0, 3.00268, 0, 0, 0, 3.00268, 0.217907, -0.610278, -4.2817)
+[node name="AbacabaNode" parent="." node_paths=PackedStringArray("abacaba_level") instance=ExtResource("1_3jbyo")]
+transform = Transform3D(3.00268, 0, 0, 0, 3.00268, 0, 0, 0, 3.00268, 0.217907, -3.61028, -4.2817)
+abacaba_level = NodePath("..")
 correct_letter = "CA"
 
-[node name="AbacabaNode2" parent="." instance=ExtResource("1_3jbyo")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.7432, -0.637928, -4.26163)
+[node name="AbacabaNode2" parent="." node_paths=PackedStringArray("abacaba_level") instance=ExtResource("1_3jbyo")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.7432, -3.63793, -4.26163)
+abacaba_level = NodePath("..")
 correct_letter = "GA"
 creature = "Gato"
 
-[node name="AbacabaNode3" parent="." instance=ExtResource("1_3jbyo")]
-transform = Transform3D(2.99949, 0, 0, 0, 2.99949, 0, 0, 0, 2.99949, -9.31494, -0.557664, -4.30418)
+[node name="AbacabaNode3" parent="." node_paths=PackedStringArray("abacaba_level") instance=ExtResource("1_3jbyo")]
+transform = Transform3D(2.99949, 0, 0, 0, 2.99949, 0, 0, 0, 2.99949, -9.31494, -3.55766, -4.30418)
+abacaba_level = NodePath("..")
 correct_letter = "PA"
 creature = "Pato"
 
@@ -68,6 +71,7 @@ offset_bottom = 15.5
 grow_vertical = 2
 text = "Voltar para o menu"
 scene_to_change = "MainMenu"
+set_menu_on_selection = true
 
 [node name="WinText" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)

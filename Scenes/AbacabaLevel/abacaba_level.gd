@@ -1,5 +1,7 @@
 class_name AbacabaLevel extends Node3D
 
+signal reset_game
+
 @export var abacaba_nodes : Array[AbacabaNode]
 static var camera_on_focus : bool = false
 
@@ -9,25 +11,39 @@ static var camera_on_focus : bool = false
 
 var selected_words : Array[String]
 
+var game_started_once : bool = false
 
 func _ready() -> void:
-	_randomize_words(0)
-	_randomize_words(1)
 	_randomize_words(2)
-	win_text.visible = false
-	_get_abacabas_and_listen()
-	audio_stream_player.play()
+	_randomize_words(1)
+	_randomize_words(0)
 	
+	win_text.visible = false
+	
+	if game_started_once == false:
+		game_started_once = true
+		_get_abacabas_and_listen()
+		audio_stream_player.play()
+
+
 func _randomize_words(abacaba_index : int) -> void:
 	var selected_letter : String = abacaba_nodes[abacaba_index].letter_array.pick_random()
 	var letter_index : int = abacaba_nodes[abacaba_index].letter_array.find(selected_letter)
+	
 	if (selected_words.has(selected_letter) == true):
 		_randomize_words(abacaba_index)
 	else:
 		abacaba_nodes[abacaba_index].correct_letter = selected_letter
-		abacaba_nodes[abacaba_index].creature = abacaba_nodes[abacaba_index].creature[letter_index]
+		abacaba_nodes[abacaba_index].creature = abacaba_nodes[abacaba_index].creature_names[letter_index]
+		
+		print(
+			"Selected Letter : ", selected_letter, "\n",
+			"Letter Index : ", letter_index
+		)
+		
+		abacaba_nodes[abacaba_index]._set_words()
+		
 		selected_words.append(selected_letter)
-	
 
 
 func _get_abacabas_and_listen() -> void:
@@ -43,7 +59,10 @@ func _focus_camera(abacaba_node : AbacabaNode) -> void:
 		var camera_tween := create_tween().set_parallel(true)
 		var final_pos : Vector3 = Vector3(abacaba_node.global_position.x, abacaba_node.global_position.y, 5.0)
 		
-		camera_tween.tween_property(game_camera, "global_position", final_pos, 1.0)
+		camera_tween.set_trans(Tween.TRANS_CUBIC)
+		camera_tween.set_ease(Tween.EASE_OUT)
+		
+		camera_tween.tween_property(game_camera, "global_position", final_pos, 0.5)
 
 
 func _unfocus_camera() -> void:
@@ -51,7 +70,10 @@ func _unfocus_camera() -> void:
 		camera_on_focus = false
 		var camera_tween := create_tween().set_parallel(true)
 		
-		camera_tween.tween_property(game_camera, "global_position", Vector3(0.0, 0.0, 10.0), 1.0)
+		camera_tween.set_trans(Tween.TRANS_CUBIC)
+		camera_tween.set_ease(Tween.EASE_OUT)
+		
+		camera_tween.tween_property(game_camera, "global_position", Vector3(0.0, 0.0, 10.0), 0.5)
 	_check_for_victory()
 
 
@@ -68,4 +90,11 @@ func _check_for_victory() -> void:
 	
 	if win_amount == needed_amount:
 		win_text.visible = true
-	
+		
+		await get_tree().create_timer(3.0).timeout
+		
+		_unfocus_camera()
+		reset_game.emit()
+		
+		selected_words.clear()
+		_ready()

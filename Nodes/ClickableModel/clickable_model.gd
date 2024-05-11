@@ -2,6 +2,7 @@ class_name ClickableModel extends Node3D
 
 signal was_clicked 
 
+@export var should_play_anim : bool = true
 
 ## Class that already have a configuration to change scenes.
 @export_category("Parameters")
@@ -16,7 +17,10 @@ signal was_clicked
 
 ## Connects the pressed signal to call the SceneManager autoload.
 func _ready() -> void:
-	animation_player.speed_scale += randf_range(-0.05, 0.05)
+	if should_play_anim == true:
+		animation_player.speed_scale += randf_range(-0.05, 0.05)
+	else:
+		animation_player.stop()
 	area_to_verify.input_event.connect(_clicked)
 
 

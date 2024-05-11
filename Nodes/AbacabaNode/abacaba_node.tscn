@@ -54,6 +54,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%WordHint:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_idjkm"]
 length = 0.001
@@ -93,6 +105,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%WordHint:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b57qm"]
 _data = {
@@ -124,6 +148,15 @@ font_size = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FirstWord/FirstWordCollision"]
 shape = SubResource("BoxShape3D_h3e2w")
+
+[node name="WordHint" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.57861, -1)
+visible = false
+billboard = 1
+no_depth_test = true
+text = "__to"
+font_size = 128
 
 [node name="SecondWord" type="Label3D" parent="."]
 unique_name_in_owner = true
