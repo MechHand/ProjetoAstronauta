@@ -7,11 +7,27 @@ static var camera_on_focus : bool = false
 @onready var win_text: Label3D = $WinText
 @onready var audio_stream_player = $AudioStreamPlayer
 
+var selected_words : Array[String]
+
 
 func _ready() -> void:
+	_randomize_words(0)
+	_randomize_words(1)
+	_randomize_words(2)
 	win_text.visible = false
 	_get_abacabas_and_listen()
 	audio_stream_player.play()
+	
+func _randomize_words(abacaba_index : int) -> void:
+	var selected_letter : String = abacaba_nodes[abacaba_index].letter_array.pick_random()
+	var letter_index : int = abacaba_nodes[abacaba_index].letter_array.find(selected_letter)
+	if (selected_words.has(selected_letter) == true):
+		_randomize_words(abacaba_index)
+	else:
+		abacaba_nodes[abacaba_index].correct_letter = selected_letter
+		abacaba_nodes[abacaba_index].creature = abacaba_nodes[abacaba_index].creature[letter_index]
+		selected_words.append(selected_letter)
+	
 
 
 func _get_abacabas_and_listen() -> void:
