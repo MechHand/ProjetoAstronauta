@@ -9,6 +9,8 @@ signal started_being_dragged
 @onready var icosphere: MeshInstance3D = $Icosphere
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@export var number_level : NumberLevel
+
 var can_be_dragged : bool = true
 var is_on_sleep_area : bool = true
 var is_being_dragged : bool = false
@@ -23,6 +25,7 @@ var original_pos : Vector3
 
 
 func _ready() -> void:
+	number_level.reset.connect(_reset_position)
 	original_pos = global_position
 	animation_player.speed_scale = randf_range(0.05, 0.25)
 
@@ -70,4 +73,12 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	if area.is_in_group("SleepArea"):
 		is_on_sleep_area = false
-		print("Exited of ",area.name)
+		print("Exited of ",area.name)	
+		
+func _reset_position():
+	var tween : Tween = create_tween()
+	tween.tween_property(self,"global_position",original_pos, 0.75)
+	
+	
+
+

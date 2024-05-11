@@ -45,7 +45,7 @@ correct_letter = "GA"
 creature = "Gato"
 
 [node name="AbacabaNode3" parent="." instance=ExtResource("1_3jbyo")]
-transform = Transform3D(2.99949, 0, 0, 0, 2.99949, 0, 0, 0, 2.99949, -9.314, -0.610278, -4.2817)
+transform = Transform3D(2.99949, 0, 0, 0, 2.99949, 0, 0, 0, 2.99949, -9.31494, -0.557664, -4.30418)
 correct_letter = "PA"
 creature = "Pato"
 

@@ -8,6 +8,8 @@ func _ready() -> void:
 func _on_number_level_won_game() -> void:
 	text = "Acertou!"
 	visible = true
+	await  get_tree().create_timer(1).timeout
+	visible = false
 
 
 func _on_number_level_try_again():
