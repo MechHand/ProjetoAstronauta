@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8i3u6c3teomi"]
+[gd_scene load_steps=12 format=3 uid="uid://b8i3u6c3teomi"]
 
 [ext_resource type="PackedScene" uid="uid://c66lldqedf65l" path="res://Nodes/AbacabaNode/abacaba_node.tscn" id="1_3jbyo"]
 [ext_resource type="Script" path="res://Scenes/AbacabaLevel/abacaba_level.gd" id="1_aqspj"]
 [ext_resource type="Texture2D" uid="uid://cwnkclbbno0hw" path="res://SkyBox/free_-_skybox_space_nebula_0.jpg" id="2_dgr2n"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="3_84hty"]
 [ext_resource type="AudioStream" uid="uid://brdwn6sjr50qd" path="res://SFX/Narração ABACABA.wav" id="5_joynl"]
+[ext_resource type="Texture2D" uid="uid://d2nnakwptsqci" path="res://SkyBox/GameBackground.png" id="6_7qsh1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bem7w"]
 panorama = ExtResource("2_dgr2n")
@@ -13,12 +14,15 @@ panorama = ExtResource("2_dgr2n")
 sky_material = SubResource("PanoramaSkyMaterial_bem7w")
 
 [sub_resource type="Environment" id="Environment_xhfnu"]
-background_mode = 2
 sky = SubResource("Sky_d2fof")
 sky_custom_fov = 98.5
 sky_rotation = Vector3(3.81529, -3.11367, 0)
-tonemap_exposure = 0.47
 glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjcd8"]
+albedo_texture = ExtResource("6_7qsh1")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lcmmb"]
 
 [node name="abacaba_level" type="Node3D" node_paths=PackedStringArray("abacaba_nodes")]
 script = ExtResource("1_aqspj")
@@ -29,8 +33,7 @@ environment = SubResource("Environment_xhfnu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.25, 0.460541, -0.496117, 0.73605, -0.194692, 0.752572, 0.62907, 0, 0, 0)
-light_energy = 3.854
-shadow_enabled = true
+light_energy = 2.369
 
 [node name="GameCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
@@ -81,3 +84,9 @@ text = "Venceu!"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_joynl")
 volume_db = 11.614
+
+[node name="BackGround" type="MeshInstance3D" parent="."]
+transform = Transform3D(31.304, 0, 0, 0, -0.070103, -14.9472, 0, 4.48245, -0.233765, 0.025, -0.647, -7.962)
+material_override = SubResource("StandardMaterial3D_fjcd8")
+mesh = SubResource("PlaneMesh_lcmmb")
+skeleton = NodePath("../../WorldEnvironment")
