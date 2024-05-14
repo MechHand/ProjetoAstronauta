@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x1k0ui6d3fv8"
-path.s3tc="res://.godot/imported/Background4K_2.png-bd4f24053597517a9cc235a751a779b9.s3tc.ctex"
+path="res://.godot/imported/Background4K_2.png-bd4f24053597517a9cc235a751a779b9.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://SkyBox/Background4K_2.png"
-dest_files=["res://.godot/imported/Background4K_2.png-bd4f24053597517a9cc235a751a779b9.s3tc.ctex"]
+dest_files=["res://.godot/imported/Background4K_2.png-bd4f24053597517a9cc235a751a779b9.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

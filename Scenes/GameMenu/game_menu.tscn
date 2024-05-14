@@ -1,8 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=42 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
+[ext_resource type="Texture2D" uid="uid://x1k0ui6d3fv8" path="res://SkyBox/Background4K_2.png" id="2_3t4r8"]
 [ext_resource type="PackedScene" uid="uid://d2ws0kl0rdnf2" path="res://Nodes/ClickableModel/planet_button.tscn" id="2_47hqd"]
-[ext_resource type="Shader" path="res://BgShader.gdshader" id="2_qnbkp"]
+[ext_resource type="Shader" path="res://Shaders/BgShader.gdshader" id="2_qnbkp"]
 [ext_resource type="Texture2D" uid="uid://d2nnakwptsqci" path="res://SkyBox/GameBackground.png" id="2_uj4r6"]
 [ext_resource type="Script" path="res://Scenes/GameMenu/MenuAnimations.gd" id="3_ieas3"]
 [ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
@@ -10,6 +11,9 @@
 
 [sub_resource type="Environment" id="Environment_w7ook"]
 background_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7b1k6"]
+albedo_texture = ExtResource("2_3t4r8")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xsr5l"]
 render_priority = 0
@@ -1027,6 +1031,7 @@ current = true
 
 [node name="BackGround" type="MeshInstance3D" parent="MenuScene/Camera3D"]
 transform = Transform3D(30, 0, 0, 0, -0.0671788, -14.3252, 0, 4.29548, -0.224039, -0.37, -0.297, -18.0719)
+material_override = SubResource("StandardMaterial3D_7b1k6")
 mesh = SubResource("PlaneMesh_2uu5n")
 skeleton = NodePath("../../WorldEnvironment")
 

@@ -17,6 +17,8 @@ static var uncomplete_creature_names : Array[String] = ["_belha","__leia","__cho
 @onready var creature_mesh: MeshInstance3D = %CreatureMesh
 @onready var box_animations: AnimationPlayer = %BoxAnimations
 @onready var word_hint: Label3D = %WordHint
+@onready var letter_animation = $FirstWord/LetterAnimation
+@onready var letter_animation_2 = $SecondWord/LetterAnimation2
 
 @onready var creature_images : Dictionary = {
 	"Cachorro" : load("res://Nodes/AbacabaNode/PlaceholdImgs/cachorro.png"),
@@ -110,6 +112,7 @@ func _set_words() -> void:
 
 func _handle_win() -> void:
 	has_won = true
+	await get_tree().create_timer(0.5).timeout
 	word_hint.text = creature_names[creature_names.find(creature)]
 	
 	await get_tree().create_timer(1.5).timeout
@@ -154,6 +157,7 @@ func _on_first_word_collision_input_event(camera: Node, event: InputEvent, posit
 					if correct_word == 0:
 						print("Correct word! ", "(", first_word.text, ")")
 						_handle_win()
+						letter_animation.play("LetterUP")
 					else:
 						print("Wrong word!")
 
@@ -165,6 +169,7 @@ func _on_second_word_collision_input_event(camera: Node, event: InputEvent, posi
 					if correct_word == 1:
 						print("Correct word! ", "(", second_word.text, ")")
 						_handle_win()
+						letter_animation_2.play("LetterLeftUp")
 					else:
 						print("Wrong word!")
 

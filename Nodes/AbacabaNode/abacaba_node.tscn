@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c66lldqedf65l"]
+[gd_scene load_steps=17 format=3 uid="uid://c66lldqedf65l"]
 
 [ext_resource type="Script" path="res://Nodes/AbacabaNode/abacaba_node.gd" id="1_cviq4"]
 [ext_resource type="PackedScene" uid="uid://bmrqcgahasfwa" path="res://Resources/AbacabaLevel_Assets/Boxes/BoxCover.glb" id="2_1jxjo"]
@@ -15,6 +15,176 @@ size = Vector3(1.1, 1.1, 1.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3e2w"]
 size = Vector3(0.75, 0.75, 1)
+
+[sub_resource type="Animation" id="Animation_ld8qd"]
+resource_name = "LetterUP"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1, -0.5, 1), Vector3(-0.249831, 1.93383, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.6, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f1uyc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1, -0.5, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_curtb"]
+_data = {
+"LetterUP": SubResource("Animation_ld8qd"),
+"RESET": SubResource("Animation_f1uyc")
+}
+
+[sub_resource type="Animation" id="Animation_8okg8"]
+resource_name = "LetterLeftUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, -0.5, 1), Vector3(-0.067029, 1.78369, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.596401, 0.608989, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_m6qkh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, -0.5, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.596401, 0.608989, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iqync"]
+_data = {
+"LetterLeftUp": SubResource("Animation_8okg8"),
+"RESET": SubResource("Animation_m6qkh")
+}
 
 [sub_resource type="Animation" id="Animation_cry21"]
 resource_name = "Opening"
@@ -149,6 +319,11 @@ font_size = 128
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FirstWord/FirstWordCollision"]
 shape = SubResource("BoxShape3D_h3e2w")
 
+[node name="LetterAnimation" type="AnimationPlayer" parent="FirstWord"]
+libraries = {
+"": SubResource("AnimationLibrary_curtb")
+}
+
 [node name="WordHint" type="Label3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.57861, -1)
@@ -160,7 +335,7 @@ font_size = 128
 
 [node name="SecondWord" type="Label3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, 1)
+transform = Transform3D(0.596401, 0, 0, 0, 0.608989, 0, 0, 0, 1, 1, -0.5, 1)
 billboard = 1
 no_depth_test = true
 text = "A"
@@ -170,6 +345,11 @@ font_size = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SecondWord/SecondWordCollision"]
 shape = SubResource("BoxShape3D_h3e2w")
+
+[node name="LetterAnimation2" type="AnimationPlayer" parent="SecondWord"]
+libraries = {
+"": SubResource("AnimationLibrary_iqync")
+}
 
 [node name="CreatureSprite" type="Sprite3D" parent="."]
 unique_name_in_owner = true
