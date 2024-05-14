@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cakqyi1f7bc6d"]
 
-[ext_resource type="Shader" path="res://BgShader.gdshader" id="1_2mmwb"]
+[ext_resource type="Shader" path="res://Shaders/BgShader.gdshader" id="1_2mmwb"]
 [ext_resource type="Texture2D" uid="uid://d2nnakwptsqci" path="res://SkyBox/GameBackground.png" id="2_6o80k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8yqjp"]
