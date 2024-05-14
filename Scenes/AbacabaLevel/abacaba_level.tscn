@@ -36,21 +36,21 @@ transform = Transform3D(-0.866024, -0.433016, 0.25, 0.460541, -0.496117, 0.73605
 light_energy = 2.369
 
 [node name="GameCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029, -0.027, 30)
 
 [node name="AbacabaNode" parent="." node_paths=PackedStringArray("abacaba_level") instance=ExtResource("1_3jbyo")]
-transform = Transform3D(3.00268, 0, 0, 0, 3.00268, 0, 0, 0, 3.00268, 0.217907, -3.61028, -4.2817)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0.217907, -3.61028, -4.2817)
 abacaba_level = NodePath("..")
 correct_letter = "CA"
 
 [node name="AbacabaNode2" parent="." node_paths=PackedStringArray("abacaba_level") instance=ExtResource("1_3jbyo")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.7432, -3.63793, -4.26163)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 20.4531, -3.63793, -4.26163)
 abacaba_level = NodePath("..")
 correct_letter = "GA"
 creature = "Gato"
 
 [node name="AbacabaNode3" parent="." node_paths=PackedStringArray("abacaba_level") instance=ExtResource("1_3jbyo")]
-transform = Transform3D(2.99949, 0, 0, 0, 2.99949, 0, 0, 0, 2.99949, -9.31494, -3.55766, -4.30418)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -18.2122, -3.63544, -4.27862)
 abacaba_level = NodePath("..")
 correct_letter = "PA"
 creature = "Pato"
@@ -80,13 +80,14 @@ set_menu_on_selection = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 pixel_size = 0.05
 text = "Venceu!"
+font_size = 64
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_joynl")
 volume_db = 11.614
 
 [node name="BackGround" type="MeshInstance3D" parent="."]
-transform = Transform3D(31.304, 0, 0, 0, -0.070103, -14.9472, 0, 4.48245, -0.233765, 0.025, -0.647, -7.962)
+transform = Transform3D(60, 0, 0, 0, -0.134358, -28.6495, 0, 8.59095, -0.448062, 0.025, -0.647, -7.962)
 material_override = SubResource("StandardMaterial3D_fjcd8")
 mesh = SubResource("PlaneMesh_lcmmb")
 skeleton = NodePath("../../WorldEnvironment")

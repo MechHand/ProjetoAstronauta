@@ -57,12 +57,12 @@ func _focus_camera(abacaba_node : AbacabaNode) -> void:
 	if camera_on_focus == false:
 		camera_on_focus = true
 		var camera_tween := create_tween().set_parallel(true)
-		var final_pos : Vector3 = Vector3(abacaba_node.global_position.x, abacaba_node.global_position.y, 5.0)
+		var final_pos : Vector3 = Vector3(abacaba_node.global_position.x, abacaba_node.global_position.y +5, 20.0)
 		
 		camera_tween.set_trans(Tween.TRANS_CUBIC)
 		camera_tween.set_ease(Tween.EASE_OUT)
 		
-		camera_tween.tween_property(game_camera, "global_position", final_pos, 0.5)
+		camera_tween.tween_property(game_camera, "global_position", final_pos, 1)
 
 
 func _unfocus_camera() -> void:
@@ -73,7 +73,7 @@ func _unfocus_camera() -> void:
 		camera_tween.set_trans(Tween.TRANS_CUBIC)
 		camera_tween.set_ease(Tween.EASE_OUT)
 		
-		camera_tween.tween_property(game_camera, "global_position", Vector3(0.0, 0.0, 10.0), 0.5)
+		camera_tween.tween_property(game_camera, "global_position", Vector3(0.0, 0.0, 30.0), 1)
 	_check_for_victory()
 
 
