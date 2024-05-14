@@ -1026,7 +1026,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 current = true
 
 [node name="BackGround" type="MeshInstance3D" parent="MenuScene/Camera3D"]
-transform = Transform3D(30, 0, 0, 0, -0.0671788, -14.3252, 0, 4.29548, -0.224039, -0.37, -0.297, -13.387)
+transform = Transform3D(30, 0, 0, 0, -0.0671788, -14.3252, 0, 4.29548, -0.224039, -0.37, -0.297, -18.0719)
 mesh = SubResource("PlaneMesh_2uu5n")
 skeleton = NodePath("../../WorldEnvironment")
 
