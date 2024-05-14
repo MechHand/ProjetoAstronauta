@@ -10,6 +10,7 @@ signal reset
 var first_num : int
 var second_num : int
 var can_reset : bool
+var can_play_audio : bool
 
 @onready var math_question_node: Node3D = $MathQuestionNode
 @onready var audio_stream_player = $AudioStreamPlayer
@@ -17,6 +18,7 @@ var can_reset : bool
 func _ready() -> void:
 	_generate_math_calc()
 	audio_stream_player.play()
+	can_play_audio = true
 	
 	#deposit_area_1.planets_inside_changed.connect(_verify_planed_stored)
 
@@ -47,3 +49,11 @@ func _verify_planed_stored() -> void:
 func _reset_game():
 	reset.emit()
 	_generate_math_calc()
+
+
+func _on_button_2_pressed():
+	if audio_stream_player.playing == false:
+		audio_stream_player.play()
+	else:
+		audio_stream_player.playing = false
+		

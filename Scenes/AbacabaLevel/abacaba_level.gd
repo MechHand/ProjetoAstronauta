@@ -98,3 +98,10 @@ func _check_for_victory() -> void:
 		
 		selected_words.clear()
 		_ready()
+
+
+func _on_button_pressed():
+	if audio_stream_player.playing == false:
+		audio_stream_player.play()
+	else:
+		audio_stream_player.playing = false

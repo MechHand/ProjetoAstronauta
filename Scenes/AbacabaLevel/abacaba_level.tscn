@@ -60,7 +60,7 @@ creature = "Pato"
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_right = 1280.0
 offset_bottom = 40.0
 
 [node name="ChangeSceneButton" parent="CanvasLayer/Control" instance=ExtResource("3_84hty")]
@@ -75,6 +75,16 @@ grow_vertical = 2
 text = "Voltar para o menu"
 scene_to_change = "MainMenu"
 set_menu_on_selection = true
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_bottom = 36.0
+grow_horizontal = 0
+text = "Tocar Tutorial"
 
 [node name="WinText" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
@@ -91,3 +101,5 @@ transform = Transform3D(60, 0, 0, 0, -0.134358, -28.6495, 0, 8.59095, -0.448062,
 material_override = SubResource("StandardMaterial3D_fjcd8")
 mesh = SubResource("PlaneMesh_lcmmb")
 skeleton = NodePath("../../WorldEnvironment")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_button_pressed"]

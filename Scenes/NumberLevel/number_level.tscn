@@ -37,7 +37,7 @@ script = ExtResource("1_stip1")
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 64.0
+offset_bottom = 115.0
 grow_horizontal = 2
 
 [node name="ChangeSceneButton" parent="CanvasLayer/Control" instance=ExtResource("2_hvj3k")]
@@ -77,6 +77,18 @@ offset_right = 123.0
 offset_bottom = 63.0
 grow_horizontal = 2
 text = "Confirmar Resposta"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = 22.5
+offset_right = 146.0
+offset_bottom = 54.5
+grow_vertical = 2
+text = "Tocar Tutorial"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
@@ -180,3 +192,4 @@ skeleton = NodePath("../WorldEnvironment")
 [connection signal="try_again" from="." to="WinText" method="_on_number_level_try_again"]
 [connection signal="won_game" from="." to="WinText" method="_on_number_level_won_game"]
 [connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_verify_planed_stored"]
+[connection signal="pressed" from="CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
