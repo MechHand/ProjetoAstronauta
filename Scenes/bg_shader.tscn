@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cakqyi1f7bc6d"]
+
+[ext_resource type="Shader" path="res://BgShader.gdshader" id="1_2mmwb"]
+[ext_resource type="Texture2D" uid="uid://d2nnakwptsqci" path="res://SkyBox/GameBackground.png" id="2_6o80k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8yqjp"]
+render_priority = 0
+shader = ExtResource("1_2mmwb")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset = Vector2(1, 0)
+shader_parameter/texture_albedo = ExtResource("2_6o80k")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6kvoo"]
+material = SubResource("ShaderMaterial_8yqjp")
+
+[node name="BgShader" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.73414, 0, 0, 0, -4.38306e-08, -1.00273, 0, 1.00273, -4.38306e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_6kvoo")
