@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ws3rmws2djuc"
+uid="uid://d3k42xyskkips"
 path="res://.godot/imported/FrogModel.glb-4683c35c5ca3726ba93c5bb88c5783b7.scn"
 
 [deps]
@@ -29,6 +29,19 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"meshes": {
+"FrogModel_sapo": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/FrogModel_sapo.res"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
