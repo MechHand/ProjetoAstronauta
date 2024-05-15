@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://q8o7fn1l651v"
+uid="uid://bll4q4agtmsdd"
 path="res://.godot/imported/BeeModel.glb-6c96db65fee6c95d477968f58c24d57c.scn"
 
 [deps]
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"BeeModel_Cube_001": {
+"BeeModel_abelha": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/BeeModel_Cube_001.res"
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/BeeModel_abelha.res"
 }
 }
 }

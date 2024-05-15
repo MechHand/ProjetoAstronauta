@@ -11,7 +11,7 @@ albedo_color = Color(0.811765, 0.403922, 0, 1)
 material = SubResource("StandardMaterial3D_wdv6c")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ykl3"]
-size = Vector3(1.1, 1.1, 1.1)
+size = Vector3(1.74256, 1.5662, 1.43038)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3e2w"]
 size = Vector3(0.75, 0.75, 1)
@@ -134,6 +134,7 @@ mesh = SubResource("BoxMesh_kg7q8")
 [node name="MouseCollision" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MouseCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00870514, 0.233099, -0.0833182)
 shape = SubResource("BoxShape3D_8ykl3")
 
 [node name="FirstWord" type="Label3D" parent="."]
@@ -179,9 +180,10 @@ pixel_size = 0.003
 billboard = 1
 
 [node name="BoxBottom2" parent="." instance=ExtResource("3_t3xkt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1.43842, 0, 0, 0, 1.15183, 0, 0, 0, 1.47074, 0, -0.5, 0)
 
 [node name="BoxCover2" parent="BoxBottom2" instance=ExtResource("2_1jxjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.978746, 0, 0, 0.00541403)
 
 [node name="BoxAnimations" type="AnimationPlayer" parent="BoxBottom2"]
 unique_name_in_owner = true

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://by0t4hykcdddo"
-path="res://.godot/imported/Chess.glb-a4c3a474c63e172b0427374b3416783f.scn"
+uid="uid://dtc7dkjlmtiot"
+path="res://.godot/imported/LighhouseModel.glb-1789f3cbfc3ff07ab6b2a8f32681e3ef.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/Models/Chess.glb"
-dest_files=["res://.godot/imported/Chess.glb-a4c3a474c63e172b0427374b3416783f.scn"]
+source_file="res://Resources/AbacabaLevel_Assets/Models/LighhouseModel.glb"
+dest_files=["res://.godot/imported/LighhouseModel.glb-1789f3cbfc3ff07ab6b2a8f32681e3ef.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"Chess_Cube": {
+"LighhouseModel_farol": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/Chess_Cube.res"
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/LighhouseModel_farol.res"
 }
 }
 }

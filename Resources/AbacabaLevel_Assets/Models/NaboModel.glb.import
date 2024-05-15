@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b1b4jdqhtt2ps"
-path="res://.godot/imported/Square.glb-86b819b6de5fa12235b5dee1c4239ae1.scn"
+uid="uid://dbrc1aghmelbb"
+path="res://.godot/imported/NaboModel.glb-bc8f0601180e96b9160034873143cb7c.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/Models/Square.glb"
-dest_files=["res://.godot/imported/Square.glb-86b819b6de5fa12235b5dee1c4239ae1.scn"]
+source_file="res://Resources/AbacabaLevel_Assets/Models/NaboModel.glb"
+dest_files=["res://.godot/imported/NaboModel.glb-bc8f0601180e96b9160034873143cb7c.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"Square_Cube_002": {
+"NaboModel_nabo": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/Square_Cube_002.res"
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/NaboModel_nabo.res"
 }
 }
 }

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bgrpjjcqugxxe"
-path="res://.godot/imported/WhaleModel.glb-36e1de70b1e7570c51fcc4e544601d5b.scn"
+uid="uid://8ydxge01ewy3"
+path="res://.godot/imported/ZabumbaModel.glb-e3afa5439886aa4b8ce292302523877e.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/Models/WhaleModel.glb"
-dest_files=["res://.godot/imported/WhaleModel.glb-36e1de70b1e7570c51fcc4e544601d5b.scn"]
+source_file="res://Resources/AbacabaLevel_Assets/Models/ZabumbaModel.glb"
+dest_files=["res://.godot/imported/ZabumbaModel.glb-e3afa5439886aa4b8ce292302523877e.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"WhaleModel_Cube_003": {
+"ZabumbaModel_Zabumba": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/WhaleModel_Cube_003.res"
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/ZabumbaModel_Zabumba.res"
 }
 }
 }

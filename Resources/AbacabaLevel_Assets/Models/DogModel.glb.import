@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ducpfvaxm2sjw"
-path="res://.godot/imported/Alligator.glb-f67f738c5507187cc97b6a4c12ff9bfc.scn"
+uid="uid://b8qr70gra3877"
+path="res://.godot/imported/DogModel.glb-e8de53e7d7cb9fca71cf6849deb6a761.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/Models/Alligator.glb"
-dest_files=["res://.godot/imported/Alligator.glb-f67f738c5507187cc97b6a4c12ff9bfc.scn"]
+source_file="res://Resources/AbacabaLevel_Assets/Models/DogModel.glb"
+dest_files=["res://.godot/imported/DogModel.glb-e8de53e7d7cb9fca71cf6849deb6a761.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"Alligator_Cube_003": {
+"DogModel_Cylinder_004": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/Alligator_Cube_003.res"
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/DogModel_Cylinder_004.res"
 }
 }
 }

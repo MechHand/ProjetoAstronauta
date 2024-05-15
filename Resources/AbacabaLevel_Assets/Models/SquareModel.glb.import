@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://lmu1w5jeloeo"
-path="res://.godot/imported/Zabumba.glb-38112c6565bf274d1c982466b9e74483.scn"
+uid="uid://ljhrq4rtp1pk"
+path="res://.godot/imported/SquareModel.glb-55ee37ceb381a77f761fe284308e4381.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/Models/Zabumba.glb"
-dest_files=["res://.godot/imported/Zabumba.glb-38112c6565bf274d1c982466b9e74483.scn"]
+source_file="res://Resources/AbacabaLevel_Assets/Models/SquareModel.glb"
+dest_files=["res://.godot/imported/SquareModel.glb-55ee37ceb381a77f761fe284308e4381.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"Zabumba_Cylinder_003": {
+"SquareModel_quadrado": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/Zabumba_Cylinder_003.res"
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/SquareModel_quadrado.res"
 }
 }
 }

@@ -36,7 +36,7 @@ transform = Transform3D(-0.866024, -0.433016, 0.25, 0.460541, -0.496117, 0.73605
 light_energy = 2.369
 
 [node name="GameCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029, -0.027, 30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029, -0.027, 30.1675)
 
 [node name="AbacabaNode" parent="." node_paths=PackedStringArray("abacaba_level") instance=ExtResource("1_3jbyo")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0.217907, -3.61028, -4.2817)
@@ -98,7 +98,7 @@ volume_db = 11.614
 bus = &"Voice"
 
 [node name="BackGround" type="MeshInstance3D" parent="."]
-transform = Transform3D(60, 0, 0, 0, -0.134358, -28.6495, 0, 8.59095, -0.448062, 0.025, -0.647, -7.962)
+transform = Transform3D(88.294, 0, 0, 0, -0.13573, -49.362, 0, 8.67869, -0.771993, 0.025, -0.647, -16.198)
 material_override = SubResource("StandardMaterial3D_fjcd8")
 mesh = SubResource("PlaneMesh_lcmmb")
 skeleton = NodePath("../../WorldEnvironment")

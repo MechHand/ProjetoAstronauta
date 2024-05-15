@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8do2nac3kxq7"
-path="res://.godot/imported/LightHouse.glb-91c413d8012300582c9500275c1f76de.scn"
+uid="uid://ds3pk4705p0wy"
+path="res://.godot/imported/FrogModel.glb-4683c35c5ca3726ba93c5bb88c5783b7.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/Models/LightHouse.glb"
-dest_files=["res://.godot/imported/LightHouse.glb-91c413d8012300582c9500275c1f76de.scn"]
+source_file="res://Resources/AbacabaLevel_Assets/Models/FrogModel.glb"
+dest_files=["res://.godot/imported/FrogModel.glb-4683c35c5ca3726ba93c5bb88c5783b7.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"LightHouse_Cylinder": {
+"FrogModel_sapo": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/LightHouse_Cylinder.res"
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/FrogModel_sapo.res"
 }
 }
 }

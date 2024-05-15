@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=48 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://kqr46ocakj1b" path="res://Scenes/SettingsScreen/settings_screen.tscn" id="1_fjwxt"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
@@ -9,6 +9,11 @@
 [ext_resource type="Script" path="res://Scenes/GameMenu/MenuAnimations.gd" id="3_ieas3"]
 [ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
 [ext_resource type="AudioStream" uid="uid://dcc37wq5u3tje" path="res://SFX/abacaba.wav" id="8_s3l3j"]
+[ext_resource type="PackedScene" uid="uid://bqu88iaxowpx3" path="res://Resources/Astronaut/AstronautBody.glb" id="9_lpv21"]
+[ext_resource type="PackedScene" uid="uid://d3s1wi077ak0u" path="res://Resources/Spaceship/Spaceship.glb" id="9_njvcp"]
+[ext_resource type="PackedScene" uid="uid://chycj845trvku" path="res://Resources/Astronaut/AstronautArms.glb" id="10_7gki1"]
+[ext_resource type="PackedScene" uid="uid://cd2063faimjox" path="res://Resources/Astronaut/AstronautAntenna.glb" id="10_gd15g"]
+[ext_resource type="PackedScene" uid="uid://cyheov26cm8it" path="res://Resources/Astronaut/AstronautLegs.glb" id="12_jbqtd"]
 
 [sub_resource type="Environment" id="Environment_w7ook"]
 background_mode = 1
@@ -223,6 +228,105 @@ tracks/7/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_fq8ss"]
+resource_name = "Options"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-4, 1),
+"update": 0,
+"values": [Vector3(0, 0, 7), Vector3(0, 1, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-4, -4),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Control/MarginContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NumerosLevelButton:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AbacabaLevelButton:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CoresLevelButton:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Control/SettingsScreen:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Control/SettingsScreen:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_k1axs"]
 length = 0.001
 tracks/0/type = "value"
@@ -344,105 +448,6 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_fq8ss"]
-resource_name = "Options"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(-4, 1),
-"update": 0,
-"values": [Vector3(0, 0, 7), Vector3(0, 1, 7)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(-4, -4),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Control/MarginContainer:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("NumerosLevelButton:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AbacabaLevelButton:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CoresLevelButton:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Control/SettingsScreen:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Control/SettingsScreen:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.5, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_svykt"]
@@ -1108,30 +1113,59 @@ monitorable = false
 [node name="Astronaut" type="Node3D" parent="MenuScene"]
 transform = Transform3D(0.59714, -0.229143, 0.768712, 0.22346, 0.967913, 0.114937, -0.770383, 0.103143, 0.629183, -4.9, -2.075, 4.475)
 
+[node name="AstronautBodySmooth" type="MeshInstance3D" parent="MenuScene/Astronaut"]
+transform = Transform3D(1, 7.45058e-09, -5.96046e-08, 7.45058e-09, 1, -1.49012e-08, 0, 7.45058e-09, 1, 0, 0, 0)
+
+[node name="AstronautBody2" parent="MenuScene/Astronaut/AstronautBodySmooth" instance=ExtResource("9_lpv21")]
+transform = Transform3D(1.20151, 0.145539, -0.129727, -0.157377, 1.20762, -0.0987614, 0.124195, 0.122269, 1.12986, 2.14713, 0.0763695, -0.272485)
+
+[node name="AstronautAntenna" parent="MenuScene/Astronaut/AstronautBodySmooth" instance=ExtResource("10_gd15g")]
+transform = Transform3D(1.01255, -6.70552e-08, -3.06964e-06, -7.45058e-09, 1.01255, -2.98023e-07, 0, 9.68575e-08, 1.01255, 2.24512, 0.0749502, -0.161349)
+
+[node name="AstronautArms" type="MeshInstance3D" parent="MenuScene/Astronaut"]
+transform = Transform3D(1, 7.45058e-09, -5.96046e-08, 7.45058e-09, 1, -1.49012e-08, 0, 7.45058e-09, 1, 0, 0, 0)
+
+[node name="AstronautArms2" parent="MenuScene/Astronaut/AstronautArms" instance=ExtResource("10_7gki1")]
+transform = Transform3D(1.20353, 0.202887, -0.18641, -0.179217, 1.19869, 0.174607, 0.209198, -0.140327, 1.222, 2.1391, 0.0474927, -0.151292)
+
+[node name="AstronautLegs" type="MeshInstance3D" parent="MenuScene/Astronaut"]
+transform = Transform3D(1, 7.45058e-09, -5.96046e-08, 7.45058e-09, 1, -1.49012e-08, 0, 7.45058e-09, 1, 0, 0, 0)
+
+[node name="AstronautLegs2" parent="MenuScene/Astronaut/AstronautLegs" instance=ExtResource("12_jbqtd")]
+transform = Transform3D(1.35551, 0.133458, 0.225933, -0.271904, 0.269587, 1.25344, 0.100512, -1.0705, 0.343826, 2.13561, 0.155232, -0.0746663)
+
 [node name="Cube_001" type="MeshInstance3D" parent="MenuScene/Astronaut"]
 transform = Transform3D(0.129689, 0, 0, 0, 0.188261, 0, 0, 0, 0.0729827, 1.76403, 0.36585, -0.306863)
+visible = false
 mesh = SubResource("ArrayMesh_4cwi5")
 skeleton = NodePath("")
 
 [node name="Cube_002" type="MeshInstance3D" parent="MenuScene/Astronaut"]
 transform = Transform3D(0.250166, 0.00370242, 0, -0.00370242, 0.250166, 0, 0, 0, 0.250193, 1.72561, 0.391391, 0.00796108)
+visible = false
 mesh = SubResource("ArrayMesh_2csvu")
 skeleton = NodePath("")
 
 [node name="Cube_003" type="MeshInstance3D" parent="MenuScene/Astronaut"]
 transform = Transform3D(0.250193, 0, 0, 0, 0.250193, 0, 0, 0, 0.250193, 1.72565, 0.0443081, 0.0074492)
+visible = false
 mesh = SubResource("ArrayMesh_m8p0t")
 skeleton = NodePath("")
 
 [node name="AstronautBody" type="MeshInstance3D" parent="MenuScene/Astronaut"]
 transform = Transform3D(0.0283542, -0.0014771, -6.98492e-10, 0.00184021, 0.00374341, -0.0262474, 0.00414755, 0.00843708, 0.0116456, 1.72299, 0.615961, 0.0537896)
+visible = false
 mesh = SubResource("ArrayMesh_8trbr")
 skeleton = NodePath("")
 
 [node name="Antena" type="MeshInstance3D" parent="MenuScene/Astronaut"]
 transform = Transform3D(0.00800462, 0, 0, 0, 0.0795416, 0, 0, 0, 0.00800462, 1.73189, 0.970318, 0)
+visible = false
 mesh = SubResource("ArrayMesh_acd4t")
 skeleton = NodePath("")
+
+[node name="Spaceship2" parent="MenuScene/Astronaut" instance=ExtResource("9_njvcp")]
+transform = Transform3D(-0.312318, 0.703984, -1.06698, -1.25235, -0.265223, 0.207214, -0.101343, 1.10797, 0.727538, 1.75704, -0.0875918, -1.04785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MenuScene/Astronaut"]
 libraries = {

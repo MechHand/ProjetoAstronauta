@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://buk0opd7mssvd"
+uid="uid://5rxtvqxcxec1"
 path="res://.godot/imported/DuckModel.glb-28295e51681d459f8ca00955a3317ed5.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/DuckModel.glb-28295e51681d459f8ca00955a3317ed
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=0.4
+nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
