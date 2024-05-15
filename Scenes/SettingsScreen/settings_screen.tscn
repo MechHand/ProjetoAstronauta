@@ -1,0 +1,269 @@
+[gd_scene load_steps=2 format=3 uid="uid://kqr46ocakj1b"]
+
+[ext_resource type="Script" path="res://Scenes/SettingsScreen/SettingsManager.gd" id="1_7jvve"]
+
+[node name="SettingsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsManager" type="Node" parent="."]
+script = ExtResource("1_7jvve")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="AudioConfigTitle" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Configurações de Audio"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Volume Geral
+"
+
+[node name="GeneralVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Volume da Musica
+"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Volume dos Efeitos
+"
+
+[node name="EffectsVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Volume das Narrações
+"
+
+[node name="NarrationVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Graves
+"
+
+[node name="BassVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
+editable = false
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Agudos
+"
+
+[node name="SharpVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
+editable = false
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScreenConfigTitle" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Configurações de Tela"
+horizontal_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Saturação
+"
+
+[node name="SaturationScaleSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Contraste
+"
+
+[node name="ContrastScaleSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Brilho
+"
+
+[node name="ShinenessScaleSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -152.0
+offset_right = 192.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Confirmar"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/GeneralVolumeSlider" to="SettingsManager" method="_on_general_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/MusicVolumeSlider" to="SettingsManager" method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/EffectsVolumeSlider" to="SettingsManager" method="_on_effects_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer8/NarrationVolumeSlider" to="SettingsManager" method="_on_narration_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer5/SaturationScaleSlider" to="SettingsManager" method="_on_saturation_scale_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer6/ContrastScaleSlider" to="SettingsManager" method="_on_contrast_scale_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer7/ShinenessScaleSlider" to="SettingsManager" method="_on_shineness_scale_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer2/ConfirmButton" to="SettingsManager" method="_on_confirm_button_pressed"]

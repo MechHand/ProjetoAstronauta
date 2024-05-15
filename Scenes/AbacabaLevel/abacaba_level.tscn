@@ -95,6 +95,7 @@ font_size = 64
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_joynl")
 volume_db = 11.614
+bus = &"Voice"
 
 [node name="BackGround" type="MeshInstance3D" parent="."]
 transform = Transform3D(60, 0, 0, 0, -0.134358, -28.6495, 0, 8.59095, -0.448062, 0.025, -0.647, -7.962)
