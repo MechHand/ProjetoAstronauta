@@ -8,6 +8,8 @@ signal started_being_dragged
 @export var max_hold_size : float = 1.0
 @onready var icosphere: MeshInstance3D = $Icosphere
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var visibile : Node3D = $"../DepositArea1"
+
 
 @export var number_level : NumberLevel
 
@@ -73,11 +75,20 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	if area.is_in_group("SleepArea"):
 		is_on_sleep_area = false
-		print("Exited of ",area.name)	
+		print("Exited of ",area.name )	
+		_shinebox(DepositArea)
+		
 		
 func _reset_position():
 	var tween : Tween = create_tween()
 	tween.tween_property(self,"global_position",original_pos, 0.75)
+	
+func _shinebox(DepositArea):
+	print("brilhando")
+	
+	
+	
+	
 	
 	
 

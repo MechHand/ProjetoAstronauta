@@ -15,10 +15,12 @@ func _on_store_area_body_entered(body: Node3D) -> void:
 
 
 func _on_store_area_body_exited(body: Node3D) -> void:
+	
 	if body is NumberPlanet:
 		body.is_stored = false
 		print(body.name, " has exited ", self.name)
 		_update_planets_inside()
+		
 
 
 func _update_planets_inside() -> void:
