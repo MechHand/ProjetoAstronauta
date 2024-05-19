@@ -30,6 +30,7 @@ script = ExtResource("1_aqspj")
 abacaba_nodes = [NodePath("AbacabaNode"), NodePath("AbacabaNode2"), NodePath("AbacabaNode3")]
 
 [node name="AbacabaInterface" parent="." instance=ExtResource("2_q811q")]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xhfnu")

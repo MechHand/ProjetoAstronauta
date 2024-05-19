@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://nrn6j5ux1nx4"]
+[gd_scene load_steps=10 format=3 uid="uid://nrn6j5ux1nx4"]
 
 [ext_resource type="Script" path="res://Nodes/NumberPlanetNode/number_planet.gd" id="1_c882b"]
 [ext_resource type="ArrayMesh" uid="uid://dwy8ke6wql4ck" path="res://Resources/NumbersLevelAssets/Star/Star_Cylinder.res" id="2_gl6ou"]
@@ -27,6 +27,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icosphere:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ad66c"]
 resource_name = "planet_rotation"
@@ -44,10 +56,27 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_hmljm"]
+resource_name = "star_jump"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icosphere:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.7, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_35g01"]
 _data = {
 "RESET": SubResource("Animation_n3tru"),
-"planet_rotation": SubResource("Animation_ad66c")
+"planet_rotation": SubResource("Animation_ad66c"),
+"star_jump": SubResource("Animation_hmljm")
 }
 
 [node name="NumberPlanet" type="RigidBody3D"]
@@ -71,7 +100,7 @@ shape = SubResource("SphereShape3D_iuwmt")
 libraries = {
 "": SubResource("AnimationLibrary_35g01")
 }
-autoplay = "planet_rotation"
+autoplay = "star_jump"
 speed_scale = 0.2
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

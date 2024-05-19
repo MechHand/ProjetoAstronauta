@@ -33,6 +33,7 @@ albedo_texture = ExtResource("8_vgjls")
 script = ExtResource("1_stip1")
 
 [node name="NumerosInterface" parent="." instance=ExtResource("2_to4e7")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
