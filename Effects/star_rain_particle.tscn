@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn1xdwdamqgpy"]
+
+[ext_resource type="Texture2D" uid="uid://dusl3rqjxc47y" path="res://Resources/UIAssets/Star1.png" id="1_oplag"]
+[ext_resource type="Texture2D" uid="uid://bfl4rm008tp5d" path="res://Resources/UIAssets/star2.png" id="2_ktfvc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8a6w"]
+transparency = 1
+albedo_texture = ExtResource("1_oplag")
+
+[sub_resource type="Curve" id="Curve_gcp8p"]
+_data = [Vector2(0.00995025, 0.032967), 0.0, 0.0, 0, 0, Vector2(0.507463, 1), 0.0, 0.0, 0, 0, Vector2(0.995025, 0.0659339), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_c3jt8"]
+curve = SubResource("Curve_gcp8p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yqq42"]
+emission_shape = 3
+emission_box_extents = Vector3(5, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 12.0
+initial_velocity_max = 14.0
+gravity = Vector3(0, -20, 0)
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_c3jt8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_m8uo1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odwnu"]
+transparency = 1
+albedo_texture = ExtResource("2_ktfvc")
+
+[node name="StarParticle" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_s8a6w")
+emitting = false
+amount = 12
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_yqq42")
+draw_pass_1 = SubResource("QuadMesh_m8uo1")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_odwnu")
+emitting = false
+amount = 12
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_yqq42")
+draw_pass_1 = SubResource("QuadMesh_m8uo1")
