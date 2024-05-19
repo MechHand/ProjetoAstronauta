@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://drfg4df25ca2s"]
+[gd_scene load_steps=16 format=3 uid="uid://drfg4df25ca2s"]
 
 [ext_resource type="PackedScene" uid="uid://nrn6j5ux1nx4" path="res://Nodes/NumberPlanetNode/number_planet.tscn" id="1_kgjds"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/number_level.gd" id="1_stip1"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="2_hvj3k"]
+[ext_resource type="PackedScene" uid="uid://i2x1nummj80m" path="res://Scenes/Interface2D/NumerosInterface.tscn" id="2_to4e7"]
 [ext_resource type="PackedScene" uid="uid://brtjpxthaddjq" path="res://Nodes/DepositAreaNode/deposit_area.tscn" id="3_ircfk"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/WinText.gd" id="3_pinu4"]
 [ext_resource type="PackedScene" uid="uid://cd3ilt6nnp08i" path="res://Nodes/MathQuestionNode/math_question_node.tscn" id="5_6k77e"]
@@ -30,6 +31,8 @@ albedo_texture = ExtResource("8_vgjls")
 
 [node name="NumberLevel" type="Node3D"]
 script = ExtResource("1_stip1")
+
+[node name="NumerosInterface" parent="." instance=ExtResource("2_to4e7")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -83,10 +86,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = 22.5
-offset_right = 146.0
-offset_bottom = 54.5
+offset_left = 1116.0
+offset_top = -19.5
+offset_right = 1261.0
+offset_bottom = 12.5
 grow_vertical = 2
 text = "Tocar Tutorial"
 

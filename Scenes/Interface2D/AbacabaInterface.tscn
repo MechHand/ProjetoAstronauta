@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4qpne6lh4gqv"]
+
+[ext_resource type="Texture2D" uid="uid://bnoxo14kxkt2a" path="res://Resources/UIAssets/BackDefault.png" id="1_744v5"]
+[ext_resource type="Texture2D" uid="uid://btkotmg2vrl2w" path="res://Resources/UIAssets/BackHover.png" id="2_p07jr"]
+[ext_resource type="Texture2D" uid="uid://w02kx64xc8ao" path="res://Resources/UIAssets/HelpDefault.png" id="3_0rsyl"]
+[ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="4_vguin"]
+
+[node name="AbacabaInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="TextureButton" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 372.0
+offset_bottom = 364.0
+scale = Vector2(0.216069, 0.216069)
+texture_normal = ExtResource("1_744v5")
+texture_pressed = ExtResource("2_p07jr")
+
+[node name="Ajuda" type="TextureButton" parent="."]
+offset_left = 1184.0
+offset_top = 16.0
+offset_right = 1540.0
+offset_bottom = 364.0
+scale = Vector2(0.226617, 0.226617)
+texture_normal = ExtResource("3_0rsyl")
+texture_pressed = ExtResource("4_vguin")

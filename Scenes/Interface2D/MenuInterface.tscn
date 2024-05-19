@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3pcfo617hobh"]
+
+[ext_resource type="Texture2D" uid="uid://yw1ftr327pbm" path="res://Resources/UIAssets/JogarYellow.png" id="1_4pwnj"]
+[ext_resource type="Texture2D" uid="uid://do6b7ksiyvece" path="res://Resources/UIAssets/JogarHover.png" id="2_ppttr"]
+[ext_resource type="Texture2D" uid="uid://dxloycvueubqi" path="res://Resources/UIAssets/SettingsDefault.png" id="3_7o20e"]
+[ext_resource type="Texture2D" uid="uid://cc6t1l08d0y6" path="res://Resources/UIAssets/SettingsHover.png" id="4_jbn7h"]
+[ext_resource type="Texture2D" uid="uid://w02kx64xc8ao" path="res://Resources/UIAssets/HelpDefault.png" id="5_lgir1"]
+[ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="6_pfkxn"]
+
+[node name="GameMenu2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jogar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 336.0
+offset_right = 1055.0
+offset_bottom = 594.0
+scale = Vector2(0.405202, 0.405202)
+texture_normal = ExtResource("1_4pwnj")
+texture_pressed = ExtResource("2_ppttr")
+
+[node name="Settings" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 372.0
+offset_bottom = 364.0
+scale = Vector2(0.216069, 0.216069)
+texture_normal = ExtResource("3_7o20e")
+texture_pressed = ExtResource("4_jbn7h")
+
+[node name="Ajuda" type="TextureButton" parent="."]
+offset_left = 1184.0
+offset_top = 16.0
+offset_right = 1540.0
+offset_bottom = 364.0
+scale = Vector2(0.226617, 0.226617)
+texture_normal = ExtResource("5_lgir1")
+texture_pressed = ExtResource("6_pfkxn")

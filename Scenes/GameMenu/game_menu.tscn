@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=49 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://kqr46ocakj1b" path="res://Scenes/SettingsScreen/settings_screen.tscn" id="1_fjwxt"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2ws0kl0rdnf2" path="res://Nodes/ClickableModel/planet_button.tscn" id="2_47hqd"]
 [ext_resource type="Texture2D" uid="uid://x1k0ui6d3fv8" path="res://SkyBox/Background4K_2.png" id="2_io2o0"]
 [ext_resource type="Script" path="res://Nodes/GamePostProcessing/PostProcessing.gd" id="3_0ggg1"]
+[ext_resource type="PackedScene" uid="uid://b3pcfo617hobh" path="res://Scenes/Interface2D/MenuInterface.tscn" id="3_8fat4"]
 [ext_resource type="Script" path="res://Scenes/GameMenu/MenuAnimations.gd" id="3_ieas3"]
 [ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
 [ext_resource type="AudioStream" uid="uid://dcc37wq5u3tje" path="res://SFX/abacaba.wav" id="8_s3l3j"]
@@ -1011,6 +1012,9 @@ ASTRONAUTA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GameMenu2D" parent="." instance=ExtResource("3_8fat4")]
+visible = false
+
 [node name="MenuScene" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="MenuScene"]
@@ -1031,17 +1035,18 @@ transform = Transform3D(0.925705, 0.321114, 0.199892, -0.378047, 0.768293, 0.516
 light_energy = 1.522
 
 [node name="IniciarButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
+visible = true
 should_play_anim = false
 scene_to_change = "Numeros"
 
 [node name="ConfigButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, -2.448, 0)
+visible = true
 should_play_anim = false
 text_to_show = "Opções"
 
 [node name="ReturnButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
 transform = Transform3D(-4.37114e-08, 0.477159, -0.878817, 0, 0.878817, 0.477159, 1, 2.08573e-08, -3.84143e-08, 9.595, -4.13, 7)
-visible = false
 should_play_anim = false
 text_to_show = "Retornar"
 
@@ -1058,54 +1063,51 @@ return_button = NodePath("../ReturnButton")
 
 [node name="NumerosLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 7)
-visible = false
 text_to_show = "Números"
 should_change_scene = true
 scene_to_change = "Numeros"
 
-[node name="Icosphere" parent="MenuScene/NumerosLevelButton" index="0"]
+[node name="Icosphere" parent="MenuScene/NumerosLevelButton" index="1"]
 mesh = ExtResource("5_jcwh1")
 
-[node name="Label3D" parent="MenuScene/NumerosLevelButton" index="1"]
+[node name="Label3D" parent="MenuScene/NumerosLevelButton" index="2"]
 text = "Números"
 
-[node name="ClickableArea" parent="MenuScene/NumerosLevelButton" index="2"]
+[node name="ClickableArea" parent="MenuScene/NumerosLevelButton" index="3"]
 input_ray_pickable = false
 monitoring = false
 monitorable = false
 
 [node name="AbacabaLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
 transform = Transform3D(0.513481, -0.17226, -1.08761, 0, 1.20004, -0.190068, 1.10116, 0.0803262, 0.507159, 8.93, 1.76661, 2.13)
-visible = false
 text_to_show = "Abacaba"
 should_change_scene = true
 scene_to_change = "Abacaba"
 
-[node name="Icosphere" parent="MenuScene/AbacabaLevelButton" index="0"]
+[node name="Icosphere" parent="MenuScene/AbacabaLevelButton" index="1"]
 mesh = ExtResource("5_jcwh1")
 
-[node name="Label3D" parent="MenuScene/AbacabaLevelButton" index="1"]
+[node name="Label3D" parent="MenuScene/AbacabaLevelButton" index="2"]
 text = "Abacaba"
 
-[node name="ClickableArea" parent="MenuScene/AbacabaLevelButton" index="2"]
+[node name="ClickableArea" parent="MenuScene/AbacabaLevelButton" index="3"]
 input_ray_pickable = false
 monitoring = false
 monitorable = false
 
 [node name="CoresLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
 transform = Transform3D(-0.834181, 0, -0.791608, 0, 1.15, 0, 0.791608, 0, -0.834181, 9.07, 0.411606, 14.09)
-visible = false
 text_to_show = "Cores"
 should_change_scene = true
 scene_to_change = "Cores"
 
-[node name="Icosphere" parent="MenuScene/CoresLevelButton" index="0"]
+[node name="Icosphere" parent="MenuScene/CoresLevelButton" index="1"]
 mesh = ExtResource("5_jcwh1")
 
-[node name="Label3D" parent="MenuScene/CoresLevelButton" index="1"]
+[node name="Label3D" parent="MenuScene/CoresLevelButton" index="2"]
 text = "Cores"
 
-[node name="ClickableArea" parent="MenuScene/CoresLevelButton" index="2"]
+[node name="ClickableArea" parent="MenuScene/CoresLevelButton" index="3"]
 input_ray_pickable = false
 monitoring = false
 monitorable = false

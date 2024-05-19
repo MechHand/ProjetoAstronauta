@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2ws0kl0rdnf2"]
+[gd_scene load_steps=10 format=3 uid="uid://d2ws0kl0rdnf2"]
 
 [ext_resource type="Script" path="res://Nodes/ClickableModel/clickable_model.gd" id="1_xtnw1"]
 [ext_resource type="ArrayMesh" uid="uid://sp0ebv50u33q" path="res://Resources/InterfaceModels/MenuButton_Cube_005.res" id="2_4gs3o"]
+[ext_resource type="PackedScene" uid="uid://bq0wdy2inlr86" path="res://Scenes/Interface2D/SelecaoFases.tscn" id="2_170hl"]
 [ext_resource type="Script" path="res://Nodes/ClickableModel/ButtonText.gd" id="2_t07es"]
 
 [sub_resource type="Animation" id="Animation_by4xe"]
@@ -49,9 +50,13 @@ _data = {
 radius = 1.115
 
 [node name="PlanetButton" type="Node3D" node_paths=PackedStringArray("area_to_verify", "animation_player")]
+visible = false
 script = ExtResource("1_xtnw1")
 area_to_verify = NodePath("ClickableArea")
 animation_player = NodePath("Icosphere/AnimationPlayer")
+
+[node name="SelecaoFases" parent="." instance=ExtResource("2_170hl")]
+visible = false
 
 [node name="Icosphere" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_4gs3o")
