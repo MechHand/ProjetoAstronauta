@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8i3u6c3teomi"]
+[gd_scene load_steps=14 format=3 uid="uid://b8i3u6c3teomi"]
 
 [ext_resource type="PackedScene" uid="uid://c66lldqedf65l" path="res://Nodes/AbacabaNode/abacaba_node.tscn" id="1_3jbyo"]
 [ext_resource type="Script" path="res://Scenes/AbacabaLevel/abacaba_level.gd" id="1_aqspj"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b4qpne6lh4gqv" path="res://Scenes/Interface2D/AbacabaInterface.tscn" id="2_q811q"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="3_84hty"]
 [ext_resource type="AudioStream" uid="uid://brdwn6sjr50qd" path="res://SFX/Narração ABACABA.wav" id="5_joynl"]
-[ext_resource type="Texture2D" uid="uid://d2nnakwptsqci" path="res://SkyBox/GameBackground.png" id="6_7qsh1"]
+[ext_resource type="Shader" path="res://Scenes/GameMenu/background_scroll_shader.gdshader" id="7_degvf"]
+[ext_resource type="Texture2D" uid="uid://x1k0ui6d3fv8" path="res://SkyBox/Background4K_2.png" id="8_o0q2b"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bem7w"]
 panorama = ExtResource("2_dgr2n")
@@ -20,8 +21,13 @@ sky_custom_fov = 98.5
 sky_rotation = Vector3(3.81529, -3.11367, 0)
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjcd8"]
-albedo_texture = ExtResource("6_7qsh1")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e114o"]
+render_priority = 0
+shader = ExtResource("7_degvf")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset = Vector2(0.2, 0.2)
+shader_parameter/texture_albedo = ExtResource("8_o0q2b")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lcmmb"]
 
@@ -103,7 +109,7 @@ bus = &"Voice"
 
 [node name="BackGround" type="MeshInstance3D" parent="."]
 transform = Transform3D(88.294, 0, 0, 0, -0.13573, -49.362, 0, 8.67869, -0.771993, 0.025, -0.647, -16.198)
-material_override = SubResource("StandardMaterial3D_fjcd8")
+material_override = SubResource("ShaderMaterial_e114o")
 mesh = SubResource("PlaneMesh_lcmmb")
 skeleton = NodePath("../../WorldEnvironment")
 

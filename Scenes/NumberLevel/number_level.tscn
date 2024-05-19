@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drfg4df25ca2s"]
+[gd_scene load_steps=17 format=3 uid="uid://drfg4df25ca2s"]
 
 [ext_resource type="PackedScene" uid="uid://nrn6j5ux1nx4" path="res://Nodes/NumberPlanetNode/number_planet.tscn" id="1_kgjds"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/number_level.gd" id="1_stip1"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://brtjpxthaddjq" path="res://Nodes/DepositAreaNode/deposit_area.tscn" id="3_ircfk"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/WinText.gd" id="3_pinu4"]
 [ext_resource type="PackedScene" uid="uid://cd3ilt6nnp08i" path="res://Nodes/MathQuestionNode/math_question_node.tscn" id="5_6k77e"]
-[ext_resource type="Texture2D" uid="uid://d2nnakwptsqci" path="res://SkyBox/GameBackground.png" id="8_vgjls"]
 [ext_resource type="AudioStream" uid="uid://cm3jpatcsj75m" path="res://SFX/Narração Matemática.wav" id="8_vjl7j"]
+[ext_resource type="Shader" path="res://Scenes/GameMenu/background_scroll_shader.gdshader" id="10_j27it"]
+[ext_resource type="Texture2D" uid="uid://x1k0ui6d3fv8" path="res://SkyBox/Background4K_2.png" id="11_0k8he"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qs6g3"]
 size = Vector3(20, 2, 1)
@@ -24,8 +25,13 @@ size = Vector3(20, 2, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_d0tqr"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm0iq"]
-albedo_texture = ExtResource("8_vgjls")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xom5l"]
+render_priority = 0
+shader = ExtResource("10_j27it")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset = Vector2(0.2, 0.2)
+shader_parameter/texture_albedo = ExtResource("11_0k8he")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_korfj"]
 
@@ -190,7 +196,7 @@ bus = &"Voice"
 
 [node name="BackGround" type="MeshInstance3D" parent="."]
 transform = Transform3D(21.569, 0, 0, 0, -0.0483043, -10.2997, 0, 3.08862, -0.161082, -0.405, -0.297, -3.377)
-material_override = SubResource("StandardMaterial3D_cm0iq")
+material_override = SubResource("ShaderMaterial_xom5l")
 mesh = SubResource("PlaneMesh_korfj")
 skeleton = NodePath("../WorldEnvironment")
 
