@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://i2x1nummj80m"]
+[gd_scene load_steps=8 format=3 uid="uid://i2x1nummj80m"]
 
 [ext_resource type="Texture2D" uid="uid://bnoxo14kxkt2a" path="res://Resources/UIAssets/BackDefault.png" id="1_787g7"]
+[ext_resource type="Script" path="res://Scenes/Interface2D/NumberInterfaceButtonManager.gd" id="1_vbc31"]
 [ext_resource type="Texture2D" uid="uid://btkotmg2vrl2w" path="res://Resources/UIAssets/BackHover.png" id="2_k804k"]
 [ext_resource type="Texture2D" uid="uid://w02kx64xc8ao" path="res://Resources/UIAssets/HelpDefault.png" id="3_bd7hj"]
 [ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="4_5nvr5"]
@@ -15,7 +16,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="NumberInterfaceButtonManager" type="Node" parent="."]
+script = ExtResource("1_vbc31")
+
 [node name="Back" type="TextureButton" parent="."]
+layout_mode = 1
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 372.0
@@ -25,20 +30,31 @@ texture_normal = ExtResource("1_787g7")
 texture_pressed = ExtResource("2_k804k")
 
 [node name="Ajuda" type="TextureButton" parent="."]
-offset_left = 1184.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
 offset_top = 16.0
-offset_right = 1540.0
+offset_right = 260.0
 offset_bottom = 364.0
+grow_horizontal = 0
 scale = Vector2(0.226617, 0.226617)
 texture_normal = ExtResource("3_bd7hj")
 texture_pressed = ExtResource("4_5nvr5")
 
 [node name="Confirmar" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 560.0
-offset_top = 24.0
-offset_right = 1087.0
-offset_bottom = 282.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 16.0
+offset_right = 431.0
+offset_bottom = 274.0
+grow_horizontal = 2
 scale = Vector2(0.354079, 0.354079)
 texture_normal = ExtResource("5_bjols")
 texture_pressed = ExtResource("6_wj3xj")
+
+[connection signal="pressed" from="Back" to="NumberInterfaceButtonManager" method="_on_back_pressed"]

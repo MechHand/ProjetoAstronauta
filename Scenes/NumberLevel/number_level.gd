@@ -57,3 +57,10 @@ func _on_button_2_pressed():
 	else:
 		audio_stream_player.playing = false
 		
+
+
+func _on_ajuda_pressed() -> void:
+	if audio_stream_player.playing == false:
+		audio_stream_player.play()
+	else:
+		audio_stream_player.playing = false

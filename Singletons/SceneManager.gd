@@ -16,6 +16,7 @@ extends Node
 
 var start_menu_on_selection : bool = false
 
+var abacaba_dialogue_played : bool = false
 
 ## Function to call when needed to change scene. Needs a String compatible with some KEY in the scene_collection dictionary.
 func _change_scene_to(scene_name : String) -> void:

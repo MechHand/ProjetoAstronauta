@@ -19,6 +19,8 @@ extends Node
 
 
 func _ready() -> void:
+	SceneManager.abacaba_dialogue_played = false
+	
 	general_volume_slider.value = GameConfigurations.general_volume
 	music_volume_slider.value = GameConfigurations.music_volume
 	effects_volume_slider.value = GameConfigurations.effects_volume

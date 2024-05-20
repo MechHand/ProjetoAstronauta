@@ -20,8 +20,8 @@ func _ready() -> void:
 	
 	win_text.visible = false
 	
-	if game_started_once == false:
-		game_started_once = true
+	if SceneManager.abacaba_dialogue_played == false:
+		SceneManager.abacaba_dialogue_played = true
 		_get_abacabas_and_listen()
 		audio_stream_player.play()
 
@@ -94,13 +94,21 @@ func _check_for_victory() -> void:
 		await get_tree().create_timer(3.0).timeout
 		
 		_unfocus_camera()
-		reset_game.emit()
-		
 		selected_words.clear()
-		_ready()
+		
+		SceneManager._change_scene_to("Abacaba")
+		#reset_game.emit()
+		#_ready()
 
 
 func _on_button_pressed():
+	if audio_stream_player.playing == false:
+		audio_stream_player.play()
+	else:
+		audio_stream_player.playing = false
+
+
+func _on_ajuda_pressed() -> void:
 	if audio_stream_player.playing == false:
 		audio_stream_player.play()
 	else:

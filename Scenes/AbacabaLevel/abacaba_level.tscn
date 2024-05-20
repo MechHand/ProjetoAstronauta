@@ -35,9 +35,6 @@ shader_parameter/texture_albedo = ExtResource("8_o0q2b")
 script = ExtResource("1_aqspj")
 abacaba_nodes = [NodePath("AbacabaNode"), NodePath("AbacabaNode2"), NodePath("AbacabaNode3")]
 
-[node name="AbacabaInterface" parent="." instance=ExtResource("2_q811q")]
-visible = false
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xhfnu")
 
@@ -67,7 +64,10 @@ creature = "Pato"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="AbacabaInterface" parent="CanvasLayer" instance=ExtResource("2_q811q")]
+
 [node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
@@ -113,4 +113,7 @@ material_override = SubResource("ShaderMaterial_e114o")
 mesh = SubResource("PlaneMesh_lcmmb")
 skeleton = NodePath("../../WorldEnvironment")
 
+[connection signal="pressed" from="CanvasLayer/AbacabaInterface/Ajuda" to="." method="_on_ajuda_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
+
+[editable path="CanvasLayer/AbacabaInterface"]
