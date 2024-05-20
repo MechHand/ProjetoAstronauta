@@ -67,7 +67,7 @@ libraries = {
 "": SubResource("AnimationLibrary_0g545")
 }
 autoplay = "planet_spin"
-speed_scale = 0.1
+speed_scale = 0.05
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)

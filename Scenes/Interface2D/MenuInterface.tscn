@@ -36,6 +36,7 @@ texture_normal = ExtResource("3_7o20e")
 texture_pressed = ExtResource("4_jbn7h")
 
 [node name="Ajuda" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 1184.0
 offset_top = 16.0
 offset_right = 1540.0
