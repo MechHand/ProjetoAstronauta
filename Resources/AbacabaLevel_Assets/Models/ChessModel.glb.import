@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://by0t4hykcdddo"
-path="res://.godot/imported/Chess.glb-a4c3a474c63e172b0427374b3416783f.scn"
+uid="uid://n2igkiljgkdc"
+path="res://.godot/imported/ChessModel.glb-b75f9ff1cd820d9474c769dd889bd0c0.scn"
 
 [deps]
 
-source_file="res://Resources/AbacabaLevel_Assets/Models/Chess.glb"
-dest_files=["res://.godot/imported/Chess.glb-a4c3a474c63e172b0427374b3416783f.scn"]
+source_file="res://Resources/AbacabaLevel_Assets/Models/ChessModel.glb"
+dest_files=["res://.godot/imported/ChessModel.glb-b75f9ff1cd820d9474c769dd889bd0c0.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"Chess_Cube": {
+"ChessModel_xadrez": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/Chess_Cube.res"
+"save_to_file/path": "res://Resources/AbacabaLevel_Assets/Models/ChessModel_xadrez.res"
 }
 }
 }
