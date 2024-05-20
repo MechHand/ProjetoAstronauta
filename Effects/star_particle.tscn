@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct5pdsyrdlh76"]
+[gd_scene load_steps=9 format=3 uid="uid://ct5pdsyrdlh76"]
 
+[ext_resource type="Script" path="res://Effects/star_particle.gd" id="1_2itvh"]
 [ext_resource type="Texture2D" uid="uid://dusl3rqjxc47y" path="res://Resources/UIAssets/Star1.png" id="1_36g3j"]
 
 [sub_resource type="Shader" id="Shader_jp46c"]
@@ -100,10 +101,14 @@ scale_curve = SubResource("CurveTexture_c3jt8")
 [sub_resource type="QuadMesh" id="QuadMesh_m8uo1"]
 
 [node name="StarParticle" type="Node3D"]
+script = ExtResource("1_2itvh")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 material_override = SubResource("ShaderMaterial_8caln")
+emitting = false
 amount = 12
+lifetime = 3.0
+one_shot = true
 explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_yqq42")

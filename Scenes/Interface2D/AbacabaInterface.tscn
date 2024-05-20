@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Back" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 372.0
@@ -23,6 +24,7 @@ texture_normal = ExtResource("1_744v5")
 texture_pressed = ExtResource("2_p07jr")
 
 [node name="Ajuda" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 1184.0
 offset_top = 16.0
 offset_right = 1540.0

@@ -3,6 +3,8 @@ class_name AbacabaNode extends Node3D
 signal _was_clicked (abacaba_node : AbacabaNode)
 signal _player_won
 
+@export var star_particle : StarParticle
+
 @export_category("Abacaba Rules")
 @export var abacaba_level : AbacabaLevel
 @export var correct_letter : String = "A"
@@ -181,5 +183,6 @@ func _restart_node() -> void:
 	has_won = false
 	creature_mesh.mesh = null
 	has_focus = false
-	
+	star_particle._emit_particle()
 	box_animations.play(&"RESET")
+	
