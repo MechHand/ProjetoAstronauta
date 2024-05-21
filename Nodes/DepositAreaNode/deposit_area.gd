@@ -3,6 +3,8 @@ class_name DepositArea extends Node3D
 signal planets_inside_changed
 
 @onready var store_area: Area3D = $StoreArea
+@onready var DEPOSIT_AREA = "res://Shaders/deposit_area.tres"
+
 
 var planets_inside : int = 0
 
@@ -32,3 +34,4 @@ func _update_planets_inside() -> void:
 	
 	print(self,name, " contains ", planets_inside)
 	planets_inside_changed.emit()
+

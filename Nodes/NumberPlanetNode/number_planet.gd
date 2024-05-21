@@ -54,10 +54,13 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, position: Vector3,
 			is_being_dragged = true
 			started_being_dragged.emit()
 			area_3d.scale = Vector3(2.0,2.0,2.0)
+			_shinebox(DepositArea)
+			
 		if can_be_dragged == true and event.pressed == false:
 			is_being_dragged = false
 			stopped_being_dragged.emit()
 			area_3d.scale = Vector3(1.0,1.0,1.0)
+			_normalbox(DepositArea)
 	
 	if event is InputEvent:
 		pos_x = position.x
@@ -85,6 +88,10 @@ func _reset_position():
 	
 func _shinebox(DepositArea):
 	print("brilhando")
+	
+func _normalbox(DepositArea):
+	print("nao brilha")
+	
 	
 	
 	
