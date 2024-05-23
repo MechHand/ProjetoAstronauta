@@ -41,10 +41,10 @@ texture_pressed = ExtResource("4_xon3q")
 
 [node name="AbacabaSelecionar" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 184.0
-offset_top = 544.0
-offset_right = 711.0
-offset_bottom = 802.0
+offset_left = 198.0
+offset_top = 472.0
+offset_right = 725.0
+offset_bottom = 730.0
 scale = Vector2(0.31775, 0.31775)
 texture_normal = ExtResource("5_qqonl")
 texture_pressed = ExtResource("6_whrwo")
@@ -62,9 +62,9 @@ texture_pressed = ExtResource("6_whrwo")
 [node name="CoresSelecionar" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 920.0
-offset_top = 544.0
+offset_top = 472.0
 offset_right = 1447.0
-offset_bottom = 802.0
+offset_bottom = 730.0
 scale = Vector2(0.31775, 0.31775)
 texture_normal = ExtResource("5_qqonl")
 texture_pressed = ExtResource("6_whrwo")
