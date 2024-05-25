@@ -61,9 +61,9 @@ texture_pressed = ExtResource("6_whrwo")
 
 [node name="CoresSelecionar" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 920.0
+offset_left = 928.0
 offset_top = 472.0
-offset_right = 1447.0
+offset_right = 1455.0
 offset_bottom = 730.0
 scale = Vector2(0.31775, 0.31775)
 texture_normal = ExtResource("5_qqonl")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=56 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://kqr46ocakj1b" path="res://Scenes/SettingsScreen/settings_screen.tscn" id="1_fjwxt"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
@@ -19,6 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://chycj845trvku" path="res://Resources/Astronaut/AstronautArms.glb" id="10_7gki1"]
 [ext_resource type="PackedScene" uid="uid://cd2063faimjox" path="res://Resources/Astronaut/AstronautAntenna.glb" id="10_gd15g"]
 [ext_resource type="PackedScene" uid="uid://cyheov26cm8it" path="res://Resources/Astronaut/AstronautLegs.glb" id="12_jbqtd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ou5yh"]
+texture_margin_bottom = 20.0
+
+[sub_resource type="Theme" id="Theme_s6thj"]
+Panel/styles/panel = SubResource("StyleBoxTexture_ou5yh")
+
+[sub_resource type="Theme" id="Theme_cnkwx"]
 
 [sub_resource type="Environment" id="Environment_w7ook"]
 background_mode = 1
@@ -1101,6 +1109,7 @@ grow_horizontal = 2
 
 [node name="Panel" type="Panel" parent="Control/MarginContainer"]
 layout_mode = 2
+theme = SubResource("Theme_s6thj")
 
 [node name="Label" type="Label" parent="Control/MarginContainer/Panel"]
 layout_mode = 1
@@ -1109,6 +1118,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_cnkwx")
 theme_override_font_sizes/font_size = 64
 text = "PROJETO
 ASTRONAUTA"
