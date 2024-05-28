@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=57 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://kqr46ocakj1b" path="res://Scenes/SettingsScreen/settings_screen.tscn" id="1_fjwxt"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Nodes/GamePostProcessing/PostProcessing.gd" id="3_0ggg1"]
 [ext_resource type="PackedScene" uid="uid://b3pcfo617hobh" path="res://Scenes/Interface2D/MenuInterface.tscn" id="3_8fat4"]
 [ext_resource type="Script" path="res://Scenes/GameMenu/MenuAnimations.gd" id="3_ieas3"]
+[ext_resource type="Texture2D" uid="uid://dx8pco8cjyf1h" path="res://Resources/UIAssets/GameLogo.png" id="3_t15f6"]
 [ext_resource type="PackedScene" uid="uid://bq0wdy2inlr86" path="res://Scenes/Interface2D/SelecaoFases.tscn" id="4_fr30b"]
 [ext_resource type="Texture2D" uid="uid://btkotmg2vrl2w" path="res://Resources/UIAssets/BackHover.png" id="5_dnrtl"]
 [ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
@@ -20,11 +21,11 @@
 [ext_resource type="PackedScene" uid="uid://cd2063faimjox" path="res://Resources/Astronaut/AstronautAntenna.glb" id="10_gd15g"]
 [ext_resource type="PackedScene" uid="uid://cyheov26cm8it" path="res://Resources/Astronaut/AstronautLegs.glb" id="12_jbqtd"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ou5yh"]
-texture_margin_bottom = 20.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13nrr"]
+texture = ExtResource("3_t15f6")
 
 [sub_resource type="Theme" id="Theme_s6thj"]
-Panel/styles/panel = SubResource("StyleBoxTexture_ou5yh")
+Panel/styles/panel = SubResource("StyleBoxTexture_13nrr")
 
 [sub_resource type="Theme" id="Theme_cnkwx"]
 
@@ -1101,11 +1102,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -452.0
+offset_left = -255.0
 offset_top = 8.0
-offset_right = 452.0
+offset_right = 649.0
 offset_bottom = 256.0
 grow_horizontal = 2
+scale = Vector2(0.587752, 0.88)
 
 [node name="Panel" type="Panel" parent="Control/MarginContainer"]
 layout_mode = 2
@@ -1120,8 +1122,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_cnkwx")
 theme_override_font_sizes/font_size = 64
-text = "PROJETO
-ASTRONAUTA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
