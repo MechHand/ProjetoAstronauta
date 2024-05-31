@@ -14,12 +14,16 @@ var can_play_audio : bool
 
 @onready var math_question_node: Node3D = $MathQuestionNode
 @onready var audio_stream_player = $AudioStreamPlayer
+@onready var world_environment: WorldEnvironment = $WorldEnvironment
 
 func _ready() -> void:
 	_generate_math_calc()
 	audio_stream_player.play()
 	can_play_audio = true
 	
+	world_environment.environment.adjustment_brightness = GameConfigurations.shineness_scale + 0.5
+	world_environment.environment.adjustment_contrast = GameConfigurations.contrast_scale + 0.5
+	world_environment.environment.adjustment_saturation = GameConfigurations.saturation_scale + 0.5
 	#deposit_area_1.planets_inside_changed.connect(_verify_planed_stored)
 
 

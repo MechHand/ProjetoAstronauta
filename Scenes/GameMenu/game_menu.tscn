@@ -1033,6 +1033,18 @@ layout_mode = 1
 [node name="SettingsManager" parent="Control/SettingsScreen" index="0" node_paths=PackedStringArray("menu_animation_node")]
 menu_animation_node = NodePath("../../../MenuScene/MenuAnimations")
 
+[node name="GeneralVolumeSlider" parent="Control/SettingsScreen/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" index="1"]
+value = 0.5
+
+[node name="MusicVolumeSlider" parent="Control/SettingsScreen/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2" index="1"]
+value = 0.5
+
+[node name="EffectsVolumeSlider" parent="Control/SettingsScreen/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3" index="1"]
+value = 0.5
+
+[node name="NarrationVolumeSlider" parent="Control/SettingsScreen/MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer8" index="1"]
+value = 0.5
+
 [node name="VBoxContainer" type="Control" parent="Control"]
 visible = false
 layout_mode = 1

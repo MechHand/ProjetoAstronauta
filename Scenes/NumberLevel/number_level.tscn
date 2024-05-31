@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://drfg4df25ca2s"]
+[gd_scene load_steps=22 format=3 uid="uid://drfg4df25ca2s"]
 
 [ext_resource type="PackedScene" uid="uid://nrn6j5ux1nx4" path="res://Nodes/NumberPlanetNode/number_planet.tscn" id="1_kgjds"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/number_level.gd" id="1_stip1"]
@@ -10,9 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="4_02lh6"]
 [ext_resource type="PackedScene" uid="uid://cd3ilt6nnp08i" path="res://Nodes/MathQuestionNode/math_question_node.tscn" id="5_6k77e"]
 [ext_resource type="Texture2D" uid="uid://n314ehf3ghyk" path="res://Resources/UIAssets/ConfirmarHover.png" id="5_gd738"]
+[ext_resource type="FontFile" uid="uid://5n7q5v0ms6ig" path="res://Resources/ComicSansFont/comic-sans/COMICSANS.TTF" id="7_s6hq7"]
 [ext_resource type="AudioStream" uid="uid://cm3jpatcsj75m" path="res://SFX/Narração Matemática.wav" id="8_vjl7j"]
 [ext_resource type="Shader" path="res://Scenes/GameMenu/background_scroll_shader.gdshader" id="10_j27it"]
 [ext_resource type="Texture2D" uid="uid://x1k0ui6d3fv8" path="res://SkyBox/Background4K_2.png" id="11_0k8he"]
+
+[sub_resource type="Environment" id="Environment_jvulb"]
+volumetric_fog_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qs6g3"]
 size = Vector3(20, 2, 1)
@@ -117,6 +121,7 @@ grow_vertical = 2
 text = "Tocar Tutorial"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jvulb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.965927, -0.224141, 0.129407, 2.24697e-08, 0.499998, 0.866027, -0.258816, -0.836518, 0.482961, 0, 0, 0)
@@ -125,7 +130,9 @@ shadow_opacity = 0.6
 [node name="WinText" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 pixel_size = 0.025
+alpha_cut = 1
 text = "Acertou!"
+font = ExtResource("7_s6hq7")
 font_size = 64
 script = ExtResource("3_pinu4")
 
@@ -141,7 +148,9 @@ transform = Transform3D(0.113146, 0, 0.0640151, 0, 0.13, 0, -0.0640151, 0, 0.113
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 visible = false
 pixel_size = 0.025
+alpha_cut = 1
 text = "2 + 4 = ?"
+font = ExtResource("7_s6hq7")
 
 [node name="DraggingArea" type="Area3D" parent="." groups=["SleepArea"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)

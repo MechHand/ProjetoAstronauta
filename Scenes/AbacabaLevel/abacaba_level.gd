@@ -8,6 +8,7 @@ static var camera_on_focus : bool = false
 @onready var game_camera: Camera3D = $GameCamera
 @onready var win_text: Label3D = $WinText
 @onready var audio_stream_player = $AudioStreamPlayer
+@onready var world_environment: WorldEnvironment = $WorldEnvironment
 
 var selected_words : Array[String]
 
@@ -20,10 +21,16 @@ func _ready() -> void:
 	
 	win_text.visible = false
 	
+	_get_abacabas_and_listen()
+	
 	if SceneManager.abacaba_dialogue_played == false:
 		SceneManager.abacaba_dialogue_played = true
 		_get_abacabas_and_listen()
 		audio_stream_player.play()
+	
+	world_environment.environment.adjustment_brightness = GameConfigurations.shineness_scale + 0.5
+	world_environment.environment.adjustment_contrast = GameConfigurations.contrast_scale + 0.5
+	world_environment.environment.adjustment_saturation = GameConfigurations.saturation_scale + 0.5
 
 
 func _randomize_words(abacaba_index : int) -> void:
@@ -47,10 +54,13 @@ func _randomize_words(abacaba_index : int) -> void:
 
 
 func _get_abacabas_and_listen() -> void:
+	
 	for child in get_children():
 		if child is AbacabaNode:
 			child._was_clicked.connect(_focus_camera)
 			child._player_won.connect(_unfocus_camera)
+			child._restart_node()
+			print(child.name, " was setted.")
 
 
 func _focus_camera(abacaba_node : AbacabaNode) -> void:
@@ -63,9 +73,13 @@ func _focus_camera(abacaba_node : AbacabaNode) -> void:
 		camera_tween.set_ease(Tween.EASE_OUT)
 		
 		camera_tween.tween_property(game_camera, "global_position", final_pos, 1)
+		
+		await camera_tween.finished
+		camera_tween.kill()
 
 
 func _unfocus_camera() -> void:
+	_check_for_victory()
 	if camera_on_focus == true:
 		camera_on_focus = false
 		var camera_tween := create_tween().set_parallel(true)
@@ -74,7 +88,11 @@ func _unfocus_camera() -> void:
 		camera_tween.set_ease(Tween.EASE_OUT)
 		
 		camera_tween.tween_property(game_camera, "global_position", Vector3(0.0, 0.0, 30.0), 1)
-	_check_for_victory()
+		
+		await camera_tween.finished
+		camera_tween.kill()
+	else:
+		game_camera.global_position = Vector3(0.0, 0.0, 30.0)
 
 
 func _check_for_victory() -> void:
@@ -90,13 +108,12 @@ func _check_for_victory() -> void:
 	
 	if win_amount == needed_amount:
 		win_text.visible = true
+		selected_words.clear()
 		
 		await get_tree().create_timer(3.0).timeout
 		
-		_unfocus_camera()
-		selected_words.clear()
-		
-		SceneManager._change_scene_to("Abacaba")
+		camera_on_focus == false
+		SceneManager._reset_scene("Abacaba")
 		#reset_game.emit()
 		#_ready()
 

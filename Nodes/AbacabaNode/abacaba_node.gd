@@ -79,6 +79,7 @@ const letter_array : Array[String] = [
 
 func _ready() -> void:
 	abacaba_level.reset_game.connect(_restart_node)
+	_restart_node()
 
 
 ## Return a letter that is not the current Abacaba letter.
@@ -157,6 +158,7 @@ func _on_mouse_collision_mouse_exited() -> void:
 
 
 func _on_first_word_collision_input_event(camera: Node, event: InputEvent, position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	print(name, " Has won : ", has_won)
 	if first_word.visible == true and has_won == false:
 		if event is InputEventMouseButton:
 				if event.pressed == true:
@@ -185,6 +187,4 @@ func _restart_node() -> void:
 	has_won = false
 	creature_mesh.mesh = null
 	has_focus = false
-	star_particle._emit_particle()
 	box_animations.play(&"RESET")
-	

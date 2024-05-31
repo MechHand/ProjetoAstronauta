@@ -21,6 +21,7 @@ extends Node
 func _ready() -> void:
 	SceneManager.abacaba_dialogue_played = false
 	
+	await get_tree().physics_frame
 	general_volume_slider.value = GameConfigurations.general_volume
 	music_volume_slider.value = GameConfigurations.music_volume
 	effects_volume_slider.value = GameConfigurations.effects_volume
@@ -29,6 +30,17 @@ func _ready() -> void:
 	saturation_scale_slider.value = GameConfigurations.saturation_scale
 	contrast_scale_slider.value = GameConfigurations.contrast_scale
 	shineness_scale_slider.value = GameConfigurations.shineness_scale
+	
+	GameConfigurations._update_general_volume(GameConfigurations.general_volume)
+	GameConfigurations._update_music_volume(GameConfigurations.music_volume)
+	GameConfigurations._update_effects_volume(GameConfigurations.effects_volume)
+	GameConfigurations._update_narration_volume(GameConfigurations.narration_volume)
+	GameConfigurations.saturation_scale = GameConfigurations.saturation_scale
+	GameConfigurations.visuals_changed.emit()
+	GameConfigurations.contrast_scale = GameConfigurations.contrast_scale
+	GameConfigurations.visuals_changed.emit()
+	GameConfigurations.shineness_scale = GameConfigurations.shineness_scale
+	GameConfigurations.visuals_changed.emit()
 
 
 func _on_confirm_button_pressed() -> void:
@@ -36,15 +48,19 @@ func _on_confirm_button_pressed() -> void:
 
 
 func _on_general_volume_slider_value_changed(value: float) -> void:
+	GameConfigurations.general_volume = value
 	GameConfigurations._update_general_volume(value)
 
 func _on_music_volume_slider_value_changed(value: float) -> void:
+	GameConfigurations.music_volume = value
 	GameConfigurations._update_music_volume(value)
 
 func _on_effects_volume_slider_value_changed(value: float) -> void:
+	GameConfigurations.effects_volume = value
 	GameConfigurations._update_effects_volume(value)
 
 func _on_narration_volume_slider_value_changed(value: float) -> void:
+	GameConfigurations.narration_volume = value
 	GameConfigurations._update_narration_volume(value)
 
 
