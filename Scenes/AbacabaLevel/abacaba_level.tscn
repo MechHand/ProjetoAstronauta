@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8i3u6c3teomi"]
+[gd_scene load_steps=16 format=3 uid="uid://b8i3u6c3teomi"]
 
 [ext_resource type="PackedScene" uid="uid://c66lldqedf65l" path="res://Nodes/AbacabaNode/abacaba_node.tscn" id="1_3jbyo"]
 [ext_resource type="Script" path="res://Scenes/AbacabaLevel/abacaba_level.gd" id="1_aqspj"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b4qpne6lh4gqv" path="res://Scenes/Interface2D/AbacabaInterface.tscn" id="2_q811q"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="3_84hty"]
 [ext_resource type="AudioStream" uid="uid://brdwn6sjr50qd" path="res://SFX/Narração ABACABA.wav" id="5_joynl"]
+[ext_resource type="Texture2D" uid="uid://btkotmg2vrl2w" path="res://Resources/UIAssets/BackHover.png" id="5_tmo4u"]
+[ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="6_30ubs"]
 [ext_resource type="Shader" path="res://Scenes/GameMenu/background_scroll_shader.gdshader" id="7_degvf"]
 [ext_resource type="Texture2D" uid="uid://x1k0ui6d3fv8" path="res://SkyBox/Background4K_2.png" id="8_o0q2b"]
 
@@ -65,6 +67,12 @@ creature = "Pato"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="AbacabaInterface" parent="CanvasLayer" instance=ExtResource("2_q811q")]
+
+[node name="Back" parent="CanvasLayer/AbacabaInterface" index="1"]
+texture_hover = ExtResource("5_tmo4u")
+
+[node name="Ajuda" parent="CanvasLayer/AbacabaInterface" index="2"]
+texture_hover = ExtResource("6_30ubs")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 visible = false

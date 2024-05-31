@@ -24,6 +24,7 @@ offset_bottom = 594.0
 scale = Vector2(0.405202, 0.405202)
 texture_normal = ExtResource("1_4pwnj")
 texture_pressed = ExtResource("2_ppttr")
+texture_hover = ExtResource("2_ppttr")
 
 [node name="Settings" type="TextureButton" parent="."]
 layout_mode = 0
@@ -34,6 +35,7 @@ offset_bottom = 364.0
 scale = Vector2(0.216069, 0.216069)
 texture_normal = ExtResource("3_7o20e")
 texture_pressed = ExtResource("4_jbn7h")
+texture_hover = ExtResource("4_jbn7h")
 
 [node name="Ajuda" type="TextureButton" parent="."]
 layout_mode = 0
@@ -44,3 +46,4 @@ offset_bottom = 364.0
 scale = Vector2(0.226617, 0.226617)
 texture_normal = ExtResource("5_lgir1")
 texture_pressed = ExtResource("6_pfkxn")
+texture_hover = ExtResource("6_pfkxn")

@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://5a1cqk7mu1jd"]
+
+[ext_resource type="Script" path="res://Scenes/AbacabaLevel/first_word_node.gd" id="1_m2o4t"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pbn2j"]
+blend_shape_mode = 0
+
+[node name="FirstWordNode" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.5, 1)
+script = ExtResource("1_m2o4t")
+
+[node name="LetterA" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_pbn2j")
+
+[node name="LetterB" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterA")
+
+[node name="LetterC" type="MeshInstance3D" parent="."]
+
+[node name="LetterD" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterC")
+
+[node name="LetterE" type="MeshInstance3D" parent="."]
+
+[node name="LetterF" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterE")
+
+[node name="LetterG" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterF")
+
+[node name="LetterH" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterG")
+
+[node name="LetterI" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterH")
+
+[node name="LetterJ" type="MeshInstance3D" parent="."]
+
+[node name="LetterK" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterJ")
+
+[node name="LetterL" type="MeshInstance3D" parent="."]
+
+[node name="LetterM" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterK")
+
+[node name="LetterN" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterO")
+
+[node name="LetterO" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterP")
+
+[node name="LetterP" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterQ")
+
+[node name="LetterQ" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterU")
+
+[node name="LetterR" type="MeshInstance3D" parent="."]
+
+[node name="LetterS" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterT")
+
+[node name="LetterT" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterU")
+
+[node name="LetterU" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterR")
+
+[node name="LetterV" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterA")
+
+[node name="LetterW" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterA")
+
+[node name="LetterX" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterA")
+
+[node name="LetterY" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterA")
+
+[node name="LetterZ" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../LetterA")

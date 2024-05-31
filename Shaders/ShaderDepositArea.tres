@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://clgh7a1tmsmai"]
+
+[ext_resource type="Shader" path="res://Shaders/DepositArea.gdshader" id="1_18w1a"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_18w1a")
+shader_parameter/speed = 0.0
+shader_parameter/min_opacity = 1.0
+shader_parameter/max_opacity = 2.0

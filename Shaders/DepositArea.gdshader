@@ -1,7 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://5rcor13qpkye"]
-
-[sub_resource type="Shader" id="Shader_c4rdh"]
-code = "shader_type spatial;
+shader_type spatial;
 
 uniform float speed : hint_range(0.0, 10.0) = 10.0;
 uniform float min_opacity : hint_range(0.0, 4.0) = 1.0;
@@ -18,11 +15,3 @@ void fragment() {
     ALBEDO = albedo_color.rgb;
     ALPHA = albedo_color.g;
 }
-"
-
-[resource]
-render_priority = 0
-shader = SubResource("Shader_c4rdh")
-shader_parameter/speed = 0.0
-shader_parameter/min_opacity = 4.0
-shader_parameter/max_opacity = 4.0

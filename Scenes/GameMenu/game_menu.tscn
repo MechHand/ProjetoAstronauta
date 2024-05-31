@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=57 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://kqr46ocakj1b" path="res://Scenes/SettingsScreen/settings_screen.tscn" id="1_fjwxt"]
 [ext_resource type="PackedScene" uid="uid://bigfuk6u6n4ck" path="res://Nodes/ChangeSceneButton/change_scene_button.tscn" id="1_wo0l7"]
@@ -8,14 +8,26 @@
 [ext_resource type="Script" path="res://Nodes/GamePostProcessing/PostProcessing.gd" id="3_0ggg1"]
 [ext_resource type="PackedScene" uid="uid://b3pcfo617hobh" path="res://Scenes/Interface2D/MenuInterface.tscn" id="3_8fat4"]
 [ext_resource type="Script" path="res://Scenes/GameMenu/MenuAnimations.gd" id="3_ieas3"]
+[ext_resource type="Texture2D" uid="uid://dx8pco8cjyf1h" path="res://Resources/UIAssets/GameLogo.png" id="3_t15f6"]
 [ext_resource type="PackedScene" uid="uid://bq0wdy2inlr86" path="res://Scenes/Interface2D/SelecaoFases.tscn" id="4_fr30b"]
+[ext_resource type="Texture2D" uid="uid://btkotmg2vrl2w" path="res://Resources/UIAssets/BackHover.png" id="5_dnrtl"]
 [ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
+[ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="6_mxrha"]
+[ext_resource type="Texture2D" uid="uid://c0p1kwl0tf6gu" path="res://Resources/UIAssets/SelecionarHover.png" id="7_a38uj"]
 [ext_resource type="AudioStream" uid="uid://dcc37wq5u3tje" path="res://SFX/abacaba.wav" id="8_s3l3j"]
 [ext_resource type="PackedScene" uid="uid://bqu88iaxowpx3" path="res://Resources/Astronaut/AstronautBody.glb" id="9_lpv21"]
 [ext_resource type="PackedScene" uid="uid://d3s1wi077ak0u" path="res://Resources/Spaceship/Spaceship.glb" id="9_njvcp"]
 [ext_resource type="PackedScene" uid="uid://chycj845trvku" path="res://Resources/Astronaut/AstronautArms.glb" id="10_7gki1"]
 [ext_resource type="PackedScene" uid="uid://cd2063faimjox" path="res://Resources/Astronaut/AstronautAntenna.glb" id="10_gd15g"]
 [ext_resource type="PackedScene" uid="uid://cyheov26cm8it" path="res://Resources/Astronaut/AstronautLegs.glb" id="12_jbqtd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13nrr"]
+texture = ExtResource("3_t15f6")
+
+[sub_resource type="Theme" id="Theme_s6thj"]
+Panel/styles/panel = SubResource("StyleBoxTexture_13nrr")
+
+[sub_resource type="Theme" id="Theme_cnkwx"]
 
 [sub_resource type="Environment" id="Environment_w7ook"]
 background_mode = 1
@@ -1090,14 +1102,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -452.0
+offset_left = -255.0
 offset_top = 8.0
-offset_right = 452.0
+offset_right = 649.0
 offset_bottom = 256.0
 grow_horizontal = 2
+scale = Vector2(0.587752, 0.88)
 
 [node name="Panel" type="Panel" parent="Control/MarginContainer"]
 layout_mode = 2
+theme = SubResource("Theme_s6thj")
 
 [node name="Label" type="Label" parent="Control/MarginContainer/Panel"]
 layout_mode = 1
@@ -1106,9 +1120,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_cnkwx")
 theme_override_font_sizes/font_size = 64
-text = "PROJETO
-ASTRONAUTA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1116,6 +1129,21 @@ vertical_alignment = 1
 
 [node name="SelecaoFases" parent="." instance=ExtResource("4_fr30b")]
 visible = false
+
+[node name="Back" parent="SelecaoFases" index="1"]
+texture_hover = ExtResource("5_dnrtl")
+
+[node name="Ajuda" parent="SelecaoFases" index="2"]
+texture_hover = ExtResource("6_mxrha")
+
+[node name="AbacabaSelecionar" parent="SelecaoFases" index="3"]
+texture_hover = ExtResource("7_a38uj")
+
+[node name="NumerosSelecionar" parent="SelecaoFases" index="4"]
+texture_hover = ExtResource("7_a38uj")
+
+[node name="CoresSelecionar" parent="SelecaoFases" index="5"]
+texture_hover = ExtResource("7_a38uj")
 
 [node name="MenuScene" type="Node3D" parent="."]
 
@@ -1145,7 +1173,7 @@ playback_default_blend_time = 0.1
 script = ExtResource("3_ieas3")
 
 [node name="NumerosLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 7)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0.497976, 7)
 visible = false
 text_to_show = "Números"
 should_change_scene = true
@@ -1163,7 +1191,7 @@ monitoring = false
 monitorable = false
 
 [node name="AbacabaLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
-transform = Transform3D(0.513481, -0.17226, -1.08761, 0, 1.20004, -0.190068, 1.10116, 0.0803262, 0.507159, 8.93, 1.76661, 2.13)
+transform = Transform3D(0.513481, -0.17226, -1.08761, 0, 1.20004, -0.190068, 1.10116, 0.0803262, 0.507159, 8.93, 1.18203, 0.332956)
 visible = false
 text_to_show = "Abacaba"
 should_change_scene = true
@@ -1173,6 +1201,7 @@ scene_to_change = "Abacaba"
 mesh = ExtResource("5_jcwh1")
 
 [node name="Label3D" parent="MenuScene/AbacabaLevelButton" index="1"]
+transform = Transform3D(1, 0, 5.96046e-08, -7.45058e-09, 1, 1.11759e-08, 0, 2.42144e-08, 1, 0.224826, 0.0164002, 1.30355)
 text = "Abacaba"
 
 [node name="ClickableArea" parent="MenuScene/AbacabaLevelButton" index="2"]
@@ -1181,7 +1210,7 @@ monitoring = false
 monitorable = false
 
 [node name="CoresLevelButton" parent="MenuScene" instance=ExtResource("2_47hqd")]
-transform = Transform3D(-0.834181, 0, -0.791608, 0, 1.15, 0, 0.791608, 0, -0.834181, 9.07, 0.411606, 14.09)
+transform = Transform3D(-0.834181, 0, -0.791608, 0, 1.15, 0, 0.791608, 0, -0.834181, 9.07, 1.14774, 14.09)
 visible = false
 text_to_show = "Cores"
 should_change_scene = true

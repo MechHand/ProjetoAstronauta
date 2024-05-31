@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://kqr46ocakj1b"]
+[gd_scene load_steps=7 format=3 uid="uid://kqr46ocakj1b"]
 
 [ext_resource type="Script" path="res://Scenes/SettingsScreen/SettingsManager.gd" id="1_7jvve"]
+[ext_resource type="Theme" uid="uid://867fpbbhu4q7" path="res://Resources/SettingsTheme.tres" id="1_k8n6r"]
+[ext_resource type="Texture2D" uid="uid://brvvis61aewbj" path="res://Resources/UIAssets/ConfirmarDefault.png" id="3_tt4oh"]
+[ext_resource type="Texture2D" uid="uid://n314ehf3ghyk" path="res://Resources/UIAssets/ConfirmarHover.png" id="4_1ply6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6b4c1"]
+texture = ExtResource("3_tt4oh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c56ku"]
+texture = ExtResource("4_1ply6")
 
 [node name="SettingsScreen" type="Control"]
 layout_mode = 3
@@ -8,11 +17,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 64.0
-offset_top = 64.0
+offset_top = 80.0
 offset_right = -64.0
-offset_bottom = -64.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_k8n6r")
 
 [node name="SettingsManager" type="Node" parent="."]
 script = ExtResource("1_7jvve")
@@ -30,9 +40,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
+offset_left = 24.0
 offset_top = 16.0
-offset_right = -16.0
+offset_right = -24.0
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -49,7 +59,7 @@ layout_mode = 2
 [node name="AudioConfigTitle" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Configurações de Audio"
+text = "CONFIGURAÇÕES DE ÁUDIO"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
@@ -58,7 +68,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Volume Geral
+text = "VOLUME GERAL
 "
 
 [node name="GeneralVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
@@ -77,7 +87,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Volume da Musica
+text = "VOLUME DA MÚSICA
 "
 
 [node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
@@ -96,7 +106,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Volume dos Efeitos
+text = "VOLUME DOS EFEITOS
 "
 
 [node name="EffectsVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
@@ -115,7 +125,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer8"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Volume das Narrações
+text = "VOLUME DAS NARRAÇÕES
 "
 
 [node name="NarrationVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer8"]
@@ -178,7 +188,7 @@ layout_mode = 2
 [node name="ScreenConfigTitle" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Configurações de Tela"
+text = "CONFIGURAÇÕES DE TELA"
 horizontal_alignment = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer"]
@@ -187,7 +197,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Saturação
+text = "SATURAÇÃO
 "
 
 [node name="SaturationScaleSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer5"]
@@ -206,7 +216,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Contraste
+text = "CONTRASTE
 "
 
 [node name="ContrastScaleSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer6"]
@@ -225,7 +235,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer7"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Brilho
+text = "BRILHO
 "
 
 [node name="ShinenessScaleSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer7"]
@@ -246,9 +256,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -192.0
-offset_top = -152.0
+offset_top = -184.0
 offset_right = 192.0
-offset_bottom = -8.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
@@ -257,7 +267,9 @@ size_flags_vertical = 8
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Confirmar"
+theme_override_styles/normal = SubResource("StyleBoxTexture_6b4c1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c56ku")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c56ku")
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/GeneralVolumeSlider" to="SettingsManager" method="_on_general_volume_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/MusicVolumeSlider" to="SettingsManager" method="_on_music_volume_slider_value_changed"]
