@@ -78,6 +78,7 @@ const letter_array : Array[String] = [
 
 
 func _ready() -> void:
+	star_particle._emit_particle()
 	abacaba_level.reset_game.connect(_restart_node)
 	_restart_node()
 

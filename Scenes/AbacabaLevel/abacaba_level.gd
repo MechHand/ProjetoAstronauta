@@ -9,6 +9,7 @@ static var camera_on_focus : bool = false
 @onready var win_text: Label3D = $WinText
 @onready var audio_stream_player = $AudioStreamPlayer
 @onready var world_environment: WorldEnvironment = $WorldEnvironment
+@onready var parabens = $Parabens
 
 var selected_words : Array[String]
 
@@ -107,7 +108,9 @@ func _check_for_victory() -> void:
 	print("Has won : ", win_amount, " | Needs : ", needed_amount)
 	
 	if win_amount == needed_amount:
-		win_text.visible = true
+		#win_text.visible = true
+		parabens.visible = true
+		parabens._play_congrats_animation()
 		selected_words.clear()
 		
 		await get_tree().create_timer(3.0).timeout

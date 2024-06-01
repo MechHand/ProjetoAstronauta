@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://drfg4df25ca2s"]
+[gd_scene load_steps=23 format=3 uid="uid://drfg4df25ca2s"]
 
 [ext_resource type="PackedScene" uid="uid://nrn6j5ux1nx4" path="res://Nodes/NumberPlanetNode/number_planet.tscn" id="1_kgjds"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/number_level.gd" id="1_stip1"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cm3jpatcsj75m" path="res://SFX/Narração Matemática.wav" id="8_vjl7j"]
 [ext_resource type="Shader" path="res://Scenes/GameMenu/background_scroll_shader.gdshader" id="10_j27it"]
 [ext_resource type="Texture2D" uid="uid://x1k0ui6d3fv8" path="res://SkyBox/Background4K_2.png" id="11_0k8he"]
+[ext_resource type="PackedScene" uid="uid://btx618cpy8xar" path="res://Parabens .tscn" id="15_y32ey"]
 
 [sub_resource type="Environment" id="Environment_jvulb"]
 volumetric_fog_enabled = true
@@ -125,10 +126,12 @@ environment = SubResource("Environment_jvulb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.965927, -0.224141, 0.129407, 2.24697e-08, 0.499998, 0.866027, -0.258816, -0.836518, 0.482961, 0, 0, 0)
+light_energy = 1.907
 shadow_opacity = 0.6
 
 [node name="WinText" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+visible = false
 pixel_size = 0.025
 alpha_cut = 1
 text = "Acertou!"
@@ -224,6 +227,11 @@ transform = Transform3D(21.569, 0, 0, 0, -0.0483043, -10.2997, 0, 3.08862, -0.16
 material_override = SubResource("ShaderMaterial_xom5l")
 mesh = SubResource("PlaneMesh_korfj")
 skeleton = NodePath("../WorldEnvironment")
+
+[node name="Parabens" parent="." instance=ExtResource("15_y32ey")]
+visible = false
+offset_right = -1280.0
+offset_bottom = -720.0
 
 [connection signal="try_again" from="." to="WinText" method="_on_number_level_try_again"]
 [connection signal="won_game" from="." to="WinText" method="_on_number_level_won_game"]

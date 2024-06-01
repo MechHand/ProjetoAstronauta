@@ -15,6 +15,7 @@ var can_play_audio : bool
 @onready var math_question_node: Node3D = $MathQuestionNode
 @onready var audio_stream_player = $AudioStreamPlayer
 @onready var world_environment: WorldEnvironment = $WorldEnvironment
+@onready var parabens = $Parabens
 
 func _ready() -> void:
 	_generate_math_calc()
@@ -37,7 +38,11 @@ func _generate_math_calc() -> void:
 
 func _verify_planed_stored() -> void:
 	if (deposit_area_1.planets_inside) == (first_num + second_num):
-		won_game.emit()
+		#won_game.emit()
+		parabens.visible = true
+		parabens._play_congrats_animation()
+		await get_tree().create_timer(1.5).timeout
+		parabens.visible = false
 		can_reset = true
 		print("YAAAYYY ACERTOU!")
 		

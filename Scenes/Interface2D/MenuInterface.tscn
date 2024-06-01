@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3pcfo617hobh"]
+[gd_scene load_steps=10 format=3 uid="uid://b3pcfo617hobh"]
 
 [ext_resource type="Texture2D" uid="uid://yw1ftr327pbm" path="res://Resources/UIAssets/JogarYellow.png" id="1_4pwnj"]
 [ext_resource type="Texture2D" uid="uid://do6b7ksiyvece" path="res://Resources/UIAssets/JogarHover.png" id="2_ppttr"]
@@ -6,6 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://cc6t1l08d0y6" path="res://Resources/UIAssets/SettingsHover.png" id="4_jbn7h"]
 [ext_resource type="Texture2D" uid="uid://w02kx64xc8ao" path="res://Resources/UIAssets/HelpDefault.png" id="5_lgir1"]
 [ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="6_pfkxn"]
+
+[sub_resource type="Animation" id="Animation_k6cju"]
+resource_name = "ButtonCliked"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_l8rxt"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n52r1"]
+_data = {
+"ButtonCliked": SubResource("Animation_k6cju"),
+"RESET": SubResource("Animation_l8rxt")
+}
 
 [node name="GameMenu2D" type="Control"]
 layout_mode = 3
@@ -16,11 +29,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Jogar" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 336.0
-offset_right = 1055.0
-offset_bottom = 594.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.467
+anchor_right = 0.579
+anchor_bottom = 0.612
+offset_left = 0.639954
+offset_top = -0.23999
+offset_right = 313.88
+offset_bottom = 153.36
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.405202, 0.405202)
 texture_normal = ExtResource("1_4pwnj")
 texture_pressed = ExtResource("2_ppttr")
@@ -47,3 +67,9 @@ scale = Vector2(0.226617, 0.226617)
 texture_normal = ExtResource("5_lgir1")
 texture_pressed = ExtResource("6_pfkxn")
 texture_hover = ExtResource("6_pfkxn")
+
+[node name="ButtonAnimations" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n52r1")
+}
+autoplay = "ButtonCliked"
