@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://clo2acpu5gue4"]
+
+[ext_resource type="Texture2D" uid="uid://hule5ojk7vuy" path="res://Resources/TransitionImages/TransitionAsset2.png" id="1_iho28"]
+[ext_resource type="Texture2D" uid="uid://du1lo0sgpea3t" path="res://Resources/TransitionImages/TransitionAsset1.png" id="2_mwk77"]
+
+[sub_resource type="Animation" id="Animation_h7tuv"]
+resource_name = "transition"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Purple:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2800, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkPurple:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-92, 0), Vector2(2500, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_svurp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Purple:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkPurple:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yvrl"]
+_data = {
+"RESET": SubResource("Animation_svurp"),
+"transition": SubResource("Animation_h7tuv")
+}
+
+[node name="Transition" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1yvrl")
+}
+autoplay = "transition"
+
+[node name="DarkPurple" type="Node2D" parent="."]
+
+[node name="TransitionAsset1" type="Sprite2D" parent="DarkPurple"]
+position = Vector2(-385, 360)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("1_iho28")
+
+[node name="TransitionAsset2" type="Sprite2D" parent="DarkPurple"]
+position = Vector2(-827, 360)
+scale = Vector2(-0.38, -0.38)
+texture = ExtResource("1_iho28")
+
+[node name="Purple" type="Node2D" parent="."]
+
+[node name="TransitionAsset1" type="Sprite2D" parent="Purple"]
+position = Vector2(-385, 360)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("2_mwk77")
+
+[node name="TransitionAsset2" type="Sprite2D" parent="Purple"]
+position = Vector2(-827, 360)
+scale = Vector2(-0.38, -0.38)
+texture = ExtResource("2_mwk77")

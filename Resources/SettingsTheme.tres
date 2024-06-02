@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://867fpbbhu4q7"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://c8ioaytxe7o20"]
 
 [ext_resource type="FontFile" uid="uid://beqxton8rhdvt" path="res://Resources/ComicSansFont/comic-sans/COMICSANSBOLD.TTF" id="1_0rxvm"]
 [ext_resource type="Texture2D" uid="uid://20nm56ttub0f" path="res://Resources/UIAssets/BotãoUI.png" id="1_i248g"]
