@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmpjxlckpw5lf"
+path="res://.godot/imported/Som de clique.mp3-fd39eeea4a260150abb62282f9982ad9.mp3str"
+
+[deps]
+
+source_file="res://SFX/Som de clique.mp3"
+dest_files=["res://.godot/imported/Som de clique.mp3-fd39eeea4a260150abb62282f9982ad9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

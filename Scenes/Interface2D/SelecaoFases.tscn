@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bq0wdy2inlr86"]
+[gd_scene load_steps=9 format=3 uid="uid://bq0wdy2inlr86"]
 
 [ext_resource type="Script" path="res://Scenes/Interface2D/LevelSelectionButtonManager.gd" id="1_rl2un"]
 [ext_resource type="Texture2D" uid="uid://bnoxo14kxkt2a" path="res://Resources/UIAssets/BackDefault.png" id="1_v0vl0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="4_xon3q"]
 [ext_resource type="Texture2D" uid="uid://drg7u6ooyyb1s" path="res://Resources/UIAssets/SelecionarDefault.png" id="5_qqonl"]
 [ext_resource type="Texture2D" uid="uid://c0p1kwl0tf6gu" path="res://Resources/UIAssets/SelecionarHover.png" id="6_whrwo"]
+[ext_resource type="AudioStream" uid="uid://dmpjxlckpw5lf" path="res://SFX/Som de clique.mp3" id="8_xot1g"]
 
 [node name="SelecaoFases" type="Control"]
 layout_mode = 3
@@ -68,6 +69,9 @@ offset_bottom = 730.0
 scale = Vector2(0.31775, 0.31775)
 texture_normal = ExtResource("5_qqonl")
 texture_pressed = ExtResource("6_whrwo")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xot1g")
 
 [connection signal="pressed" from="Back" to="LevelSelectionButtonManager" method="_on_back_pressed"]
 [connection signal="pressed" from="Ajuda" to="LevelSelectionButtonManager" method="_on_ajuda_pressed"]

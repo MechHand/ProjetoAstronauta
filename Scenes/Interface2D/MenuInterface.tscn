@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3pcfo617hobh"]
+[gd_scene load_steps=12 format=3 uid="uid://b3pcfo617hobh"]
 
 [ext_resource type="Texture2D" uid="uid://yw1ftr327pbm" path="res://Resources/UIAssets/JogarYellow.png" id="1_4pwnj"]
+[ext_resource type="Script" path="res://Scenes/Interface2D/MenuInterface.gd" id="1_ettwn"]
 [ext_resource type="Texture2D" uid="uid://do6b7ksiyvece" path="res://Resources/UIAssets/JogarHover.png" id="2_ppttr"]
 [ext_resource type="Texture2D" uid="uid://dxloycvueubqi" path="res://Resources/UIAssets/SettingsDefault.png" id="3_7o20e"]
 [ext_resource type="Texture2D" uid="uid://cc6t1l08d0y6" path="res://Resources/UIAssets/SettingsHover.png" id="4_jbn7h"]
 [ext_resource type="Texture2D" uid="uid://w02kx64xc8ao" path="res://Resources/UIAssets/HelpDefault.png" id="5_lgir1"]
 [ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="6_pfkxn"]
+[ext_resource type="AudioStream" uid="uid://dmpjxlckpw5lf" path="res://SFX/Som de clique.mp3" id="8_geakj"]
 
 [sub_resource type="Animation" id="Animation_k6cju"]
 resource_name = "ButtonCliked"
@@ -27,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ettwn")
 
 [node name="Jogar" type="TextureButton" parent="."]
 layout_mode = 1
@@ -73,3 +76,10 @@ libraries = {
 "": SubResource("AnimationLibrary_n52r1")
 }
 autoplay = "ButtonCliked"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_geakj")
+
+[connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Ajuda" to="." method="_on_ajuda_pressed"]
