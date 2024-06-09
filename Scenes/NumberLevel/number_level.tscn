@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://drfg4df25ca2s"]
+[gd_scene load_steps=25 format=3 uid="uid://drfg4df25ca2s"]
 
 [ext_resource type="PackedScene" uid="uid://nrn6j5ux1nx4" path="res://Nodes/NumberPlanetNode/number_planet.tscn" id="1_kgjds"]
 [ext_resource type="Script" path="res://Scenes/NumberLevel/number_level.gd" id="1_stip1"]
@@ -15,6 +15,8 @@
 [ext_resource type="Shader" path="res://Scenes/GameMenu/background_scroll_shader.gdshader" id="10_j27it"]
 [ext_resource type="Texture2D" uid="uid://x1k0ui6d3fv8" path="res://SkyBox/Background4K_2.png" id="11_0k8he"]
 [ext_resource type="PackedScene" uid="uid://btx618cpy8xar" path="res://Parabens .tscn" id="15_y32ey"]
+[ext_resource type="AudioStream" uid="uid://nsr23kavgsom" path="res://SFX/Feedback positivo ao acertar.wav" id="16_lvg7s"]
+[ext_resource type="AudioStream" uid="uid://c2soab2yf233k" path="res://SFX/Feedback Negativo.wav" id="17_5ibs1"]
 
 [sub_resource type="Environment" id="Environment_jvulb"]
 volumetric_fog_enabled = true
@@ -50,6 +52,7 @@ script = ExtResource("1_stip1")
 visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="NumerosInterface" parent="CanvasLayer" instance=ExtResource("2_to4e7")]
 mouse_filter = 2
@@ -61,6 +64,7 @@ texture_hover = ExtResource("3_eacop")
 texture_hover = ExtResource("4_02lh6")
 
 [node name="Confirmar" parent="CanvasLayer/NumerosInterface" index="3"]
+z_index = -1
 texture_hover = ExtResource("5_gd738")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
@@ -230,8 +234,19 @@ skeleton = NodePath("../WorldEnvironment")
 
 [node name="Parabens" parent="." instance=ExtResource("15_y32ey")]
 visible = false
-offset_right = -1280.0
-offset_bottom = -720.0
+z_index = 1
+offset_left = -21.0
+offset_top = 24.0
+offset_right = -1301.0
+offset_bottom = -696.0
+
+[node name="FeedbackPositivo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_lvg7s")
+volume_db = 14.238
+
+[node name="FeedbackNegativo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_5ibs1")
+volume_db = 11.105
 
 [connection signal="try_again" from="." to="WinText" method="_on_number_level_try_again"]
 [connection signal="won_game" from="." to="WinText" method="_on_number_level_won_game"]

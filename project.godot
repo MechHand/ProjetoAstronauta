@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="XP5Prototype"
+config/name="Cosmos"
 run/main_scene="res://Scenes/GameMenu/game_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://IconeDoJogo.svg"
 
 [autoload]
 

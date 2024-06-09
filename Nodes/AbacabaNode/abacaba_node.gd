@@ -21,6 +21,7 @@ static var uncomplete_creature_names : Array[String] = ["_belha","__leia","__cho
 @onready var word_hint: Label3D = %WordHint
 @onready var first_letter_animation = $FirstWord/FirstLetterAnimation
 @onready var second_letter_animation = $SecondWord/SecondLetterAnimation
+@onready var open_box = $OpenBox
 
 
 @onready var creature_images : Dictionary = {
@@ -145,6 +146,7 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseButton:
 			if event.pressed == true:
 				_show_creature()
+				open_box.play()
 		if event is InputEventScreenTouch:
 			_show_creature()
 

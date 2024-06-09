@@ -16,6 +16,8 @@ var can_play_audio : bool
 @onready var audio_stream_player = $AudioStreamPlayer
 @onready var world_environment: WorldEnvironment = $WorldEnvironment
 @onready var parabens = $Parabens
+@onready var feedback_positivo = $FeedbackPositivo
+@onready var feedback_negativo = $FeedbackNegativo
 
 func _ready() -> void:
 	_generate_math_calc()
@@ -40,6 +42,7 @@ func _verify_planed_stored() -> void:
 	if (deposit_area_1.planets_inside) == (first_num + second_num):
 		#won_game.emit()
 		parabens.visible = true
+		feedback_positivo.play()
 		parabens._play_congrats_animation()
 		await get_tree().create_timer(1.5).timeout
 		parabens.visible = false
@@ -54,6 +57,7 @@ func _verify_planed_stored() -> void:
 		
 	else:
 		try_again.emit()
+		feedback_negativo.play()
 		
 func _reset_game():
 	reset.emit()

@@ -1,6 +1,7 @@
 extends Control
 
 @onready var click_sound = $ClickSound
+@onready var selecione_jogar = $SelecioneJogar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,3 +23,4 @@ func _on_settings_pressed():
 
 func _on_ajuda_pressed():
 	click_sound.play()
+	selecione_jogar.play()

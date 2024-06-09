@@ -17,6 +17,7 @@ extends Node
 @onready var contrast_scale_slider: HSlider = %ContrastScaleSlider
 @onready var shineness_scale_slider: HSlider = %ShinenessScaleSlider
 
+@onready var click_sound = $"../ClickSound"
 
 func _ready() -> void:
 	SceneManager.abacaba_dialogue_played = false
@@ -45,6 +46,7 @@ func _ready() -> void:
 
 func _on_confirm_button_pressed() -> void:
 	menu_animation_node.play_backwards(&"Options")
+	click_sound.play()
 
 
 func _on_general_volume_slider_value_changed(value: float) -> void:

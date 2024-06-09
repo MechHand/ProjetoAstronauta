@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://i2x1nummj80m"]
+[gd_scene load_steps=10 format=3 uid="uid://i2x1nummj80m"]
 
 [ext_resource type="Texture2D" uid="uid://bnoxo14kxkt2a" path="res://Resources/UIAssets/BackDefault.png" id="1_787g7"]
 [ext_resource type="Script" path="res://Scenes/Interface2D/NumberInterfaceButtonManager.gd" id="1_vbc31"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="4_5nvr5"]
 [ext_resource type="Texture2D" uid="uid://brvvis61aewbj" path="res://Resources/UIAssets/ConfirmarDefault.png" id="5_bjols"]
 [ext_resource type="Texture2D" uid="uid://n314ehf3ghyk" path="res://Resources/UIAssets/ConfirmarHover.png" id="6_wj3xj"]
+[ext_resource type="AudioStream" uid="uid://dmpjxlckpw5lf" path="res://SFX/Som de clique.mp3" id="8_osale"]
+[ext_resource type="AudioStream" uid="uid://cm3jpatcsj75m" path="res://SFX/Narração Matemática.wav" id="9_jori3"]
 
 [node name="NumerosInterface" type="Control"]
 layout_mode = 3
@@ -57,4 +59,12 @@ scale = Vector2(0.354079, 0.354079)
 texture_normal = ExtResource("5_bjols")
 texture_pressed = ExtResource("6_wj3xj")
 
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_osale")
+
+[node name="TutorialSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_jori3")
+
 [connection signal="pressed" from="Back" to="NumberInterfaceButtonManager" method="_on_back_pressed"]
+[connection signal="pressed" from="Ajuda" to="NumberInterfaceButtonManager" method="_on_ajuda_pressed"]
+[connection signal="pressed" from="Confirmar" to="NumberInterfaceButtonManager" method="_on_confirmar_pressed"]
