@@ -116,7 +116,8 @@ func _check_for_victory() -> void:
 		await get_tree().create_timer(3.0).timeout
 		
 		camera_on_focus == false
-		SceneManager._reset_scene("Abacaba")
+		#SceneManager._reset_scene("Abacaba")
+		get_tree().reload_current_scene()
 		#reset_game.emit()
 		#_ready()
 

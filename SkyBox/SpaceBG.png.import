@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxscthxalvhth"
 path.s3tc="res://.godot/imported/SpaceBG.png-528c3d3a63b4087c1c5d2c87e24482c8.s3tc.ctex"
+path.etc2="res://.godot/imported/SpaceBG.png-528c3d3a63b4087c1c5d2c87e24482c8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://SkyBox/SpaceBG.png"
-dest_files=["res://.godot/imported/SpaceBG.png-528c3d3a63b4087c1c5d2c87e24482c8.s3tc.ctex"]
+dest_files=["res://.godot/imported/SpaceBG.png-528c3d3a63b4087c1c5d2c87e24482c8.s3tc.ctex", "res://.godot/imported/SpaceBG.png-528c3d3a63b4087c1c5d2c87e24482c8.etc2.ctex"]
 
 [params]
 

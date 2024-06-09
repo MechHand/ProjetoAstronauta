@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://r1f878dbsi20"
 path.s3tc="res://.godot/imported/DCletterblocks_baseColor.png-672e6412652d0bba08075e637051e1e8.s3tc.ctex"
+path.etc2="res://.godot/imported/DCletterblocks_baseColor.png-672e6412652d0bba08075e637051e1e8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/wooden_alphabet_blocks/textures/DCletterblocks_baseColor.png"
-dest_files=["res://.godot/imported/DCletterblocks_baseColor.png-672e6412652d0bba08075e637051e1e8.s3tc.ctex"]
+dest_files=["res://.godot/imported/DCletterblocks_baseColor.png-672e6412652d0bba08075e637051e1e8.s3tc.ctex", "res://.godot/imported/DCletterblocks_baseColor.png-672e6412652d0bba08075e637051e1e8.etc2.ctex"]
 
 [params]
 

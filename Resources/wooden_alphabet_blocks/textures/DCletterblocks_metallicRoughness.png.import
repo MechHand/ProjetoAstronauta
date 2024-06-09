@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://nt8xiyct1xaf"
 path.s3tc="res://.godot/imported/DCletterblocks_metallicRoughness.png-83fdb7d8aabd30c21104bac55de1ddcb.s3tc.ctex"
+path.etc2="res://.godot/imported/DCletterblocks_metallicRoughness.png-83fdb7d8aabd30c21104bac55de1ddcb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/wooden_alphabet_blocks/textures/DCletterblocks_metallicRoughness.png"
-dest_files=["res://.godot/imported/DCletterblocks_metallicRoughness.png-83fdb7d8aabd30c21104bac55de1ddcb.s3tc.ctex"]
+dest_files=["res://.godot/imported/DCletterblocks_metallicRoughness.png-83fdb7d8aabd30c21104bac55de1ddcb.s3tc.ctex", "res://.godot/imported/DCletterblocks_metallicRoughness.png-83fdb7d8aabd30c21104bac55de1ddcb.etc2.ctex"]
 
 [params]
 
