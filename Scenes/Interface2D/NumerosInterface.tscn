@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://i2x1nummj80m"]
+[gd_scene load_steps=11 format=3 uid="uid://i2x1nummj80m"]
 
 [ext_resource type="Texture2D" uid="uid://bnoxo14kxkt2a" path="res://Resources/UIAssets/BackDefault.png" id="1_787g7"]
 [ext_resource type="Script" path="res://Scenes/Interface2D/NumberInterfaceButtonManager.gd" id="1_vbc31"]
 [ext_resource type="Texture2D" uid="uid://btkotmg2vrl2w" path="res://Resources/UIAssets/BackHover.png" id="2_k804k"]
 [ext_resource type="Texture2D" uid="uid://w02kx64xc8ao" path="res://Resources/UIAssets/HelpDefault.png" id="3_bd7hj"]
 [ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="4_5nvr5"]
+[ext_resource type="Script" path="res://Scenes/Interface2D/ClickAnimButtonTexture.gd" id="4_5pkdb"]
 [ext_resource type="Texture2D" uid="uid://brvvis61aewbj" path="res://Resources/UIAssets/ConfirmarDefault.png" id="5_bjols"]
 [ext_resource type="Texture2D" uid="uid://n314ehf3ghyk" path="res://Resources/UIAssets/ConfirmarHover.png" id="6_wj3xj"]
 [ext_resource type="AudioStream" uid="uid://dmpjxlckpw5lf" path="res://SFX/Som de clique.mp3" id="8_osale"]
@@ -30,6 +31,7 @@ offset_bottom = 364.0
 scale = Vector2(0.216069, 0.216069)
 texture_normal = ExtResource("1_787g7")
 texture_pressed = ExtResource("2_k804k")
+script = ExtResource("4_5pkdb")
 
 [node name="Ajuda" type="TextureButton" parent="."]
 layout_mode = 1
@@ -44,6 +46,7 @@ grow_horizontal = 0
 scale = Vector2(0.226617, 0.226617)
 texture_normal = ExtResource("3_bd7hj")
 texture_pressed = ExtResource("4_5nvr5")
+script = ExtResource("4_5pkdb")
 
 [node name="Confirmar" type="TextureButton" parent="."]
 layout_mode = 1
@@ -58,6 +61,7 @@ grow_horizontal = 2
 scale = Vector2(0.354079, 0.354079)
 texture_normal = ExtResource("5_bjols")
 texture_pressed = ExtResource("6_wj3xj")
+script = ExtResource("4_5pkdb")
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_osale")

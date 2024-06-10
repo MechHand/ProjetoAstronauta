@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dapervi3nawa3"]
+[gd_scene load_steps=58 format=3 uid="uid://dapervi3nawa3"]
 
 [ext_resource type="PackedScene" uid="uid://kqr46ocakj1b" path="res://Scenes/SettingsScreen/settings_screen.tscn" id="1_fjwxt"]
 [ext_resource type="Shader" path="res://Scenes/GameMenu/background_scroll_shader.gdshader" id="2_7xu4r"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bq0wdy2inlr86" path="res://Scenes/Interface2D/SelecaoFases.tscn" id="4_fr30b"]
 [ext_resource type="Texture2D" uid="uid://btkotmg2vrl2w" path="res://Resources/UIAssets/BackHover.png" id="5_dnrtl"]
 [ext_resource type="ArrayMesh" uid="uid://bb5bnee66futx" path="res://Resources/PlanetPlaceholder/PlanetBase_Icosphere.res" id="5_jcwh1"]
+[ext_resource type="Script" path="res://Scenes/Interface2D/ClickAnimButtonTexture.gd" id="5_ufse8"]
 [ext_resource type="Texture2D" uid="uid://dx2xmhoowsebh" path="res://Resources/UIAssets/HelpHover.png" id="6_mxrha"]
 [ext_resource type="Texture2D" uid="uid://c0p1kwl0tf6gu" path="res://Resources/UIAssets/SelecionarHover.png" id="7_a38uj"]
 [ext_resource type="AudioStream" uid="uid://dcc37wq5u3tje" path="res://SFX/abacaba.wav" id="8_s3l3j"]
@@ -996,14 +997,25 @@ texture = ExtResource("3_chfpb")
 
 [node name="GameMenu2D" parent="." instance=ExtResource("3_8fat4")]
 
+[node name="Jogar" parent="GameMenu2D" index="0"]
+script = ExtResource("5_ufse8")
+
+[node name="Settings" parent="GameMenu2D" index="1"]
+script = ExtResource("5_ufse8")
+
+[node name="Ajuda" parent="GameMenu2D" index="2"]
+script = ExtResource("5_ufse8")
+
 [node name="SelecaoFases" parent="." instance=ExtResource("4_fr30b")]
 visible = false
 
 [node name="Back" parent="SelecaoFases" index="1"]
 texture_hover = ExtResource("5_dnrtl")
+script = ExtResource("5_ufse8")
 
 [node name="Ajuda" parent="SelecaoFases" index="2"]
 texture_hover = ExtResource("6_mxrha")
+script = ExtResource("5_ufse8")
 
 [node name="AbacabaSelecionar" parent="SelecaoFases" index="3"]
 offset_left = 361.0
@@ -1011,6 +1023,7 @@ offset_top = 446.0
 offset_right = 888.0
 offset_bottom = 704.0
 texture_hover = ExtResource("7_a38uj")
+script = ExtResource("5_ufse8")
 
 [node name="NumerosSelecionar" parent="SelecaoFases" index="4"]
 offset_left = 798.0
@@ -1018,10 +1031,12 @@ offset_top = 449.0
 offset_right = 1325.0
 offset_bottom = 707.0
 texture_hover = ExtResource("7_a38uj")
+script = ExtResource("5_ufse8")
 
 [node name="CoresSelecionar" parent="SelecaoFases" index="5"]
 visible = false
 texture_hover = ExtResource("7_a38uj")
+script = ExtResource("5_ufse8")
 
 [node name="MenuScene" type="Node3D" parent="."]
 

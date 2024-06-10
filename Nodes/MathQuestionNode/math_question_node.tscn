@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd3ilt6nnp08i"]
+[gd_scene load_steps=4 format=3 uid="uid://cd3ilt6nnp08i"]
 
 [ext_resource type="Script" path="res://Nodes/MathQuestionNode/math_question_node.gd" id="1_8bamn"]
 [ext_resource type="PackedScene" uid="uid://bbudbyfm3xbuu" path="res://Nodes/NumberModelNode/NumberModelNode.tscn" id="2_s73tc"]
+[ext_resource type="FontFile" uid="uid://5n7q5v0ms6ig" path="res://Resources/ComicSansFont/comic-sans/COMICSANS.TTF" id="3_qejan"]
 
 [node name="MathQuestionNode" type="Node3D" node_paths=PackedStringArray("first_model", "second_model", "operation_digit")]
 script = ExtResource("1_8bamn")
@@ -17,18 +18,20 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12, 0
 
 [node name="OperationModel" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-pixel_size = 0.3
+pixel_size = 0.34
+alpha_cut = 1
 alpha_antialiasing_edge = 1.0
 texture_filter = 5
-modulate = Color(1, 0.760784, 0.556863, 1)
 text = "+"
+font = ExtResource("3_qejan")
 outline_size = 8
 
 [node name="Result" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 5, 0)
-pixel_size = 0.3
+pixel_size = 0.34
+alpha_cut = 1
 alpha_antialiasing_edge = 1.0
 texture_filter = 5
-modulate = Color(1, 0.760784, 0.556863, 1)
 text = "="
+font = ExtResource("3_qejan")
 outline_size = 8
